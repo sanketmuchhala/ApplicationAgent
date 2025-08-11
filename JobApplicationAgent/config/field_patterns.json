@@ -1,0 +1,419 @@
+{
+  "personal_info": {
+    "first_name": {
+      "patterns": [
+        "first name",
+        "firstname", 
+        "given name",
+        "forename"
+      ],
+      "profile_path": "personal.first_name",
+      "confidence_boost": 10
+    },
+    "last_name": {
+      "patterns": [
+        "last name",
+        "lastname",
+        "surname", 
+        "family name"
+      ],
+      "profile_path": "personal.last_name",
+      "confidence_boost": 10
+    },
+    "full_name": {
+      "patterns": [
+        "full name",
+        "complete name",
+        "name",
+        "your name"
+      ],
+      "profile_path": "personal.full_name",
+      "confidence_boost": 8
+    },
+    "middle_name": {
+      "patterns": [
+        "middle name",
+        "middle initial"
+      ],
+      "profile_path": "personal.middle_name",
+      "confidence_boost": 5
+    },
+    "preferred_name": {
+      "patterns": [
+        "preferred name",
+        "nickname",
+        "goes by"
+      ],
+      "profile_path": "personal.preferred_name",
+      "confidence_boost": 5
+    }
+  },
+  "contact_info": {
+    "email": {
+      "patterns": [
+        "email",
+        "e-mail",
+        "email address",
+        "mail"
+      ],
+      "profile_path": "contact.email",
+      "confidence_boost": 15
+    },
+    "phone": {
+      "patterns": [
+        "phone",
+        "telephone",
+        "mobile",
+        "cell",
+        "contact number",
+        "phone number"
+      ],
+      "profile_path": "contact.phone",
+      "confidence_boost": 15
+    },
+    "linkedin": {
+      "patterns": [
+        "linkedin",
+        "linkedin url",
+        "linkedin profile",
+        "linked in"
+      ],
+      "profile_path": "contact.linkedin_url",
+      "confidence_boost": 12
+    },
+    "github": {
+      "patterns": [
+        "github",
+        "github url", 
+        "github profile",
+        "git hub"
+      ],
+      "profile_path": "contact.github_url",
+      "confidence_boost": 12
+    },
+    "portfolio": {
+      "patterns": [
+        "portfolio",
+        "portfolio url",
+        "website",
+        "personal website",
+        "personal site"
+      ],
+      "profile_path": "contact.portfolio_url",
+      "confidence_boost": 10
+    }
+  },
+  "address_info": {
+    "address_line1": {
+      "patterns": [
+        "address",
+        "street address",
+        "address line 1",
+        "street"
+      ],
+      "profile_path": "personal.address_line1",
+      "confidence_boost": 8
+    },
+    "address_line2": {
+      "patterns": [
+        "address line 2",
+        "apartment",
+        "apt",
+        "suite",
+        "unit"
+      ],
+      "profile_path": "personal.address_line2",
+      "confidence_boost": 6
+    },
+    "city": {
+      "patterns": [
+        "city",
+        "town"
+      ],
+      "profile_path": "personal.city",
+      "confidence_boost": 10
+    },
+    "state": {
+      "patterns": [
+        "state",
+        "province",
+        "region"
+      ],
+      "profile_path": "personal.state",
+      "confidence_boost": 10
+    },
+    "postal_code": {
+      "patterns": [
+        "zip",
+        "postal code",
+        "postcode",
+        "zip code"
+      ],
+      "profile_path": "personal.postal_code",
+      "confidence_boost": 8
+    },
+    "country": {
+      "patterns": [
+        "country",
+        "nation"
+      ],
+      "profile_path": "personal.country",
+      "confidence_boost": 8
+    }
+  },
+  "work_experience": {
+    "total_experience": {
+      "patterns": [
+        "years of experience",
+        "experience years",
+        "total experience",
+        "work experience",
+        "professional experience"
+      ],
+      "profile_path": "experience.total_years",
+      "confidence_boost": 12
+    },
+    "current_company": {
+      "patterns": [
+        "current company",
+        "current employer",
+        "present company"
+      ],
+      "profile_path": "experience.current_company",
+      "confidence_boost": 10
+    },
+    "current_position": {
+      "patterns": [
+        "current position",
+        "current title",
+        "current role",
+        "job title"
+      ],
+      "profile_path": "experience.current_position",
+      "confidence_boost": 10
+    },
+    "previous_company": {
+      "patterns": [
+        "previous company",
+        "former employer",
+        "last company"
+      ],
+      "profile_path": "experience.previous_company", 
+      "confidence_boost": 8
+    }
+  },
+  "education": {
+    "education_level": {
+      "patterns": [
+        "education level",
+        "highest education",
+        "degree level"
+      ],
+      "profile_path": "education.latest_degree",
+      "confidence_boost": 10
+    },
+    "degree": {
+      "patterns": [
+        "degree",
+        "diploma",
+        "qualification"
+      ],
+      "profile_path": "education.degree",
+      "confidence_boost": 12
+    },
+    "field_of_study": {
+      "patterns": [
+        "field of study",
+        "major",
+        "specialization",
+        "area of study"
+      ],
+      "profile_path": "education.field_of_study",
+      "confidence_boost": 10
+    },
+    "university": {
+      "patterns": [
+        "university",
+        "college",
+        "school",
+        "institution"
+      ],
+      "profile_path": "education.institution",
+      "confidence_boost": 8
+    },
+    "graduation_year": {
+      "patterns": [
+        "graduation year",
+        "year graduated",
+        "completion year"
+      ],
+      "profile_path": "education.graduation_year",
+      "confidence_boost": 6
+    },
+    "gpa": {
+      "patterns": [
+        "gpa",
+        "grade point average",
+        "academic average"
+      ],
+      "profile_path": "education.gpa",
+      "confidence_boost": 6
+    }
+  },
+  "compensation": {
+    "current_salary": {
+      "patterns": [
+        "current salary",
+        "present salary",
+        "current compensation"
+      ],
+      "profile_path": "compensation.current_salary",
+      "confidence_boost": 12
+    },
+    "desired_salary": {
+      "patterns": [
+        "desired salary",
+        "expected salary",
+        "salary expectation",
+        "target salary"
+      ],
+      "profile_path": "compensation.desired_salary_min",
+      "confidence_boost": 12
+    },
+    "salary_range_min": {
+      "patterns": [
+        "minimum salary",
+        "salary minimum",
+        "lowest salary"
+      ],
+      "profile_path": "compensation.desired_salary_min",
+      "confidence_boost": 10
+    },
+    "salary_range_max": {
+      "patterns": [
+        "maximum salary",
+        "salary maximum",
+        "highest salary"
+      ],
+      "profile_path": "compensation.desired_salary_max",
+      "confidence_boost": 10
+    },
+    "hourly_rate": {
+      "patterns": [
+        "hourly rate",
+        "rate per hour",
+        "hourly wage"
+      ],
+      "profile_path": "compensation.hourly_rate",
+      "confidence_boost": 8
+    }
+  },
+  "preferences": {
+    "work_location": {
+      "patterns": [
+        "preferred location",
+        "work location",
+        "location preference"
+      ],
+      "profile_path": "job_preferences.preferred_locations",
+      "confidence_boost": 8
+    },
+    "remote_preference": {
+      "patterns": [
+        "remote work",
+        "work from home",
+        "remote preference",
+        "location flexibility"
+      ],
+      "profile_path": "job_preferences.remote_preference",
+      "confidence_boost": 10
+    },
+    "willing_to_relocate": {
+      "patterns": [
+        "willing to relocate",
+        "relocation",
+        "move for work"
+      ],
+      "profile_path": "job_preferences.willing_to_relocate",
+      "confidence_boost": 8
+    },
+    "start_date": {
+      "patterns": [
+        "start date",
+        "available to start",
+        "earliest start date"
+      ],
+      "profile_path": "job_preferences.start_date_availability",
+      "confidence_boost": 10
+    },
+    "notice_period": {
+      "patterns": [
+        "notice period",
+        "weeks notice",
+        "notice required"
+      ],
+      "profile_path": "job_preferences.notice_period_weeks",
+      "confidence_boost": 8
+    }
+  },
+  "authorization": {
+    "work_authorization": {
+      "patterns": [
+        "work authorization",
+        "work eligibility",
+        "authorized to work",
+        "visa status"
+      ],
+      "profile_path": "personal.work_authorization",
+      "confidence_boost": 15
+    },
+    "visa_sponsorship": {
+      "patterns": [
+        "visa sponsorship",
+        "require sponsorship",
+        "need sponsorship"
+      ],
+      "profile_path": "personal.needs_sponsorship",
+      "confidence_boost": 12
+    }
+  },
+  "skills": {
+    "technical_skills": {
+      "patterns": [
+        "technical skills",
+        "programming skills",
+        "technologies",
+        "expertise"
+      ],
+      "profile_path": "technical_skills",
+      "confidence_boost": 8
+    },
+    "soft_skills": {
+      "patterns": [
+        "soft skills",
+        "interpersonal skills",
+        "communication skills"
+      ],
+      "profile_path": "soft_skills", 
+      "confidence_boost": 6
+    },
+    "languages": {
+      "patterns": [
+        "languages",
+        "spoken languages",
+        "language proficiency"
+      ],
+      "profile_path": "languages",
+      "confidence_boost": 6
+    },
+    "certifications": {
+      "patterns": [
+        "certifications",
+        "certificates",
+        "professional certifications"
+      ],
+      "profile_path": "certifications",
+      "confidence_boost": 8
+    }
+  }
+}

@@ -1,0 +1,1 @@
+# Job Application Agent - AI-powered job application automation with DeepSeek integration

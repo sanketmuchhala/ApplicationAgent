@@ -1,0 +1,184 @@
+{
+  "field_validation_rules": {
+    "email": {
+      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+      "error_message": "Please enter a valid email address",
+      "required": true
+    },
+    "phone": {
+      "pattern": "^[\\d\\s\\-\\(\\)\\.]{10,}$",
+      "error_message": "Please enter a valid phone number",
+      "min_length": 10,
+      "required": true
+    },
+    "url": {
+      "pattern": "^https?://",
+      "error_message": "Please enter a valid URL starting with http:// or https://",
+      "required": false
+    },
+    "zip_code": {
+      "pattern": "^\\d{5}(-\\d{4})?$",
+      "error_message": "Please enter a valid ZIP code (e.g., 12345 or 12345-6789)",
+      "required": false
+    },
+    "salary": {
+      "type": "number",
+      "min_value": 0,
+      "max_value": 1000000,
+      "error_message": "Please enter a valid salary amount",
+      "required": false
+    },
+    "years_experience": {
+      "type": "number",
+      "min_value": 0,
+      "max_value": 50,
+      "error_message": "Please enter years of experience (0-50)",
+      "required": false
+    },
+    "gpa": {
+      "type": "number",
+      "min_value": 0.0,
+      "max_value": 4.0,
+      "error_message": "Please enter a valid GPA (0.0-4.0)",
+      "required": false
+    }
+  },
+  "field_type_rules": {
+    "text": {
+      "max_length": 255,
+      "min_length": 1,
+      "trim_whitespace": true
+    },
+    "textarea": {
+      "max_length": 5000,
+      "min_length": 10,
+      "trim_whitespace": true
+    },
+    "email": {
+      "max_length": 255,
+      "validation_rule": "email",
+      "transform": "lowercase"
+    },
+    "tel": {
+      "max_length": 20,
+      "validation_rule": "phone",
+      "strip_formatting": true
+    },
+    "url": {
+      "max_length": 500,
+      "validation_rule": "url",
+      "auto_prefix": "https://"
+    },
+    "number": {
+      "type": "numeric",
+      "allow_decimals": true
+    },
+    "date": {
+      "format": "YYYY-MM-DD",
+      "min_date": "1900-01-01",
+      "max_date": "2030-12-31"
+    },
+    "select": {
+      "validate_options": true,
+      "allow_other": false
+    },
+    "checkbox": {
+      "type": "boolean"
+    },
+    "file": {
+      "allowed_types": [".pdf", ".doc", ".docx", ".txt"],
+      "max_size_mb": 10,
+      "required_for_submission": true
+    }
+  },
+  "common_required_fields": [
+    "first_name",
+    "last_name",
+    "email",
+    "phone",
+    "work_authorization"
+  ],
+  "sensitive_fields": [
+    "email",
+    "phone",
+    "address_line1",
+    "address_line2",
+    "social_security",
+    "date_of_birth"
+  ],
+  "auto_fill_fields": [
+    "first_name",
+    "last_name",
+    "email",
+    "phone",
+    "city",
+    "state",
+    "postal_code",
+    "country"
+  ],
+  "text_processing_rules": {
+    "cover_letter": {
+      "min_length": 100,
+      "max_length": 2000,
+      "require_personalization": true,
+      "check_grammar": true
+    },
+    "why_interested": {
+      "min_length": 50,
+      "max_length": 500,
+      "require_company_mention": true
+    },
+    "experience_description": {
+      "min_length": 100,
+      "max_length": 1000,
+      "include_achievements": true
+    },
+    "strengths": {
+      "min_length": 50,
+      "max_length": 300,
+      "be_specific": true
+    }
+  },
+  "file_upload_rules": {
+    "resume": {
+      "required": true,
+      "allowed_formats": [".pdf", ".doc", ".docx"],
+      "max_size_mb": 5,
+      "naming_convention": "FirstName_LastName_Resume"
+    },
+    "cover_letter": {
+      "required": false,
+      "allowed_formats": [".pdf", ".doc", ".docx"],
+      "max_size_mb": 3,
+      "naming_convention": "FirstName_LastName_CoverLetter"
+    },
+    "portfolio": {
+      "required": false,
+      "allowed_formats": [".pdf", ".zip"],
+      "max_size_mb": 20,
+      "naming_convention": "FirstName_LastName_Portfolio"
+    },
+    "transcript": {
+      "required": false,
+      "allowed_formats": [".pdf"],
+      "max_size_mb": 5,
+      "official_required": true
+    }
+  },
+  "data_quality_checks": {
+    "completeness": {
+      "required_field_percentage": 0.8,
+      "recommended_field_percentage": 0.6
+    },
+    "consistency": {
+      "check_name_variations": true,
+      "check_date_logic": true,
+      "check_experience_gaps": true
+    },
+    "accuracy": {
+      "verify_email_format": true,
+      "verify_phone_format": true,
+      "verify_url_accessibility": false
+    }
+  }
+}

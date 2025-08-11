@@ -1,0 +1,251 @@
+{
+  "profile_id": "profile_sample_001",
+  "created_at": "2024-01-15T10:30:00.000Z",
+  "updated_at": "2024-01-15T10:30:00.000Z",
+  "version": "1.0",
+  "personal": {
+    "first_name": "Alex",
+    "last_name": "Johnson",
+    "middle_name": "R",
+    "preferred_name": null,
+    "date_of_birth": null,
+    "address_line1": "123 Tech Street",
+    "address_line2": "Apt 4B",
+    "city": "San Francisco",
+    "state": "CA",
+    "postal_code": "94105",
+    "country": "United States",
+    "work_authorization": "citizen",
+    "visa_type": null
+  },
+  "contact": {
+    "email": "alex.johnson@email.com",
+    "phone": "(555) 123-4567",
+    "secondary_email": null,
+    "linkedin_url": "https://linkedin.com/in/alexjohnson",
+    "github_url": "https://github.com/alexjohnson",
+    "portfolio_url": "https://alexjohnson.dev",
+    "website": "https://alexjohnson.dev",
+    "twitter_handle": null
+  },
+  "experience": [
+    {
+      "company": "TechCorp Solutions",
+      "position": "Senior Software Engineer",
+      "start_date": "2022-03-01",
+      "end_date": null,
+      "description": "Lead development of scalable web applications using React, Node.js, and AWS. Responsible for architecting microservices and mentoring junior developers.",
+      "key_achievements": [
+        "Reduced API response time by 60% through microservices migration",
+        "Led a team of 4 developers on a critical customer-facing project",
+        "Implemented CI/CD pipeline that reduced deployment time by 80%"
+      ],
+      "technologies": [
+        "JavaScript",
+        "TypeScript", 
+        "React",
+        "Node.js",
+        "AWS",
+        "Docker",
+        "PostgreSQL"
+      ],
+      "skills_developed": [
+        "Team Leadership",
+        "System Architecture",
+        "Performance Optimization"
+      ],
+      "location": "San Francisco, CA",
+      "employment_type": "full_time",
+      "is_current": true
+    },
+    {
+      "company": "StartupXYZ",
+      "position": "Full Stack Developer",
+      "start_date": "2020-01-15",
+      "end_date": "2022-02-28",
+      "description": "Developed and maintained full-stack web applications for a fast-growing startup. Built features from concept to deployment.",
+      "key_achievements": [
+        "Built the entire customer dashboard from scratch",
+        "Improved application performance by 40%",
+        "Integrated payment processing with Stripe API"
+      ],
+      "technologies": [
+        "Python",
+        "Django",
+        "React",
+        "PostgreSQL",
+        "Redis",
+        "Heroku"
+      ],
+      "skills_developed": [
+        "Full Stack Development",
+        "API Design",
+        "Database Optimization"
+      ],
+      "location": "Remote",
+      "employment_type": "full_time",
+      "is_current": false
+    },
+    {
+      "company": "WebDev Agency",
+      "position": "Junior Developer",
+      "start_date": "2018-06-01",
+      "end_date": "2019-12-31",
+      "description": "Developed websites and web applications for various clients. Gained experience in multiple technologies and client communication.",
+      "key_achievements": [
+        "Successfully delivered 15+ client projects",
+        "Learned 5 new programming languages",
+        "Received 'Developer of the Month' award twice"
+      ],
+      "technologies": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "PHP",
+        "WordPress",
+        "MySQL"
+      ],
+      "skills_developed": [
+        "Client Communication",
+        "Project Management",
+        "Rapid Learning"
+      ],
+      "location": "Austin, TX",
+      "employment_type": "full_time",
+      "is_current": false
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of California, Berkeley",
+      "degree": "Bachelor of Science",
+      "field_of_study": "Computer Science",
+      "start_date": "2014-08-15",
+      "end_date": "2018-05-20",
+      "gpa": 3.7,
+      "honors": "Magna Cum Laude",
+      "relevant_coursework": [
+        "Data Structures and Algorithms",
+        "Software Engineering",
+        "Database Systems",
+        "Computer Networks",
+        "Artificial Intelligence"
+      ],
+      "activities": [
+        "Computer Science Club President",
+        "ACM Programming Contest Participant",
+        "CS Tutor for Underclassmen"
+      ],
+      "location": "Berkeley, CA",
+      "is_current": false
+    }
+  ],
+  "technical_skills": [
+    "JavaScript",
+    "TypeScript",
+    "Python", 
+    "React",
+    "Node.js",
+    "AWS",
+    "Docker",
+    "PostgreSQL",
+    "MongoDB",
+    "Redis",
+    "GraphQL",
+    "REST APIs",
+    "Git",
+    "Linux",
+    "Kubernetes"
+  ],
+  "soft_skills": [
+    "Team Leadership",
+    "Problem Solving",
+    "Communication",
+    "Project Management",
+    "Mentoring",
+    "Critical Thinking",
+    "Adaptability",
+    "Time Management"
+  ],
+  "certifications": [
+    "AWS Certified Solutions Architect",
+    "MongoDB Certified Developer",
+    "Certified Scrum Master (CSM)"
+  ],
+  "languages": {
+    "English": "Native",
+    "Spanish": "Conversational",
+    "French": "Basic"
+  },
+  "compensation": {
+    "current_salary": 125000,
+    "desired_salary_min": 140000,
+    "desired_salary_max": 170000,
+    "salary_negotiable": true,
+    "hourly_rate": null,
+    "equity_interest": true,
+    "benefits_important": [
+      "Health Insurance",
+      "401k Matching",
+      "Flexible PTO",
+      "Professional Development Budget",
+      "Remote Work Options"
+    ]
+  },
+  "job_preferences": {
+    "desired_roles": [
+      "Senior Software Engineer",
+      "Tech Lead",
+      "Full Stack Developer",
+      "Frontend Architect"
+    ],
+    "industries": [
+      "Technology",
+      "FinTech",
+      "Healthcare Tech",
+      "E-commerce"
+    ],
+    "company_sizes": [
+      "Startup (1-50)",
+      "Mid-size (50-500)",
+      "Large (500+)"
+    ],
+    "employment_types": ["full_time"],
+    "remote_preference": "hybrid",
+    "willing_to_relocate": false,
+    "preferred_locations": [
+      "San Francisco, CA",
+      "Remote",
+      "Seattle, WA",
+      "Austin, TX"
+    ],
+    "travel_comfort": "Minimal (< 10%)",
+    "start_date_availability": "2024-03-01",
+    "notice_period_weeks": 2
+  },
+  "cover_letter_templates": [
+    {
+      "template_name": "Tech General",
+      "opening_paragraph": "I am excited to apply for the {position} position at {company}. With over 5 years of experience in full-stack development and a passion for building scalable applications, I believe I would be a valuable addition to your engineering team.",
+      "body_paragraph": "In my current role as Senior Software Engineer at TechCorp Solutions, I have led the development of microservices that serve over 100k users daily. My experience with React, Node.js, and AWS has enabled me to build robust, performant applications. I am particularly drawn to companies that value innovation and technical excellence.",
+      "closing_paragraph": "I would welcome the opportunity to discuss how my technical expertise and leadership experience can contribute to {company}'s continued success. Thank you for your consideration.",
+      "placeholders": {
+        "position": "Software Engineer",
+        "company": "Company Name"
+      },
+      "industry_specific": "technology"
+    }
+  ],
+  "summary_statement": "Experienced Senior Software Engineer with 5+ years building scalable web applications. Expertise in React, Node.js, and AWS with a track record of leading teams and delivering high-performance solutions. Passionate about clean code, system architecture, and mentoring developers.",
+  "resume_path": "./documents/alex_johnson_resume.pdf",
+  "cover_letter_path": "./documents/alex_johnson_cover_letter.pdf",
+  "tags": [
+    "senior",
+    "full-stack",
+    "leadership",
+    "react",
+    "node.js",
+    "aws"
+  ],
+  "notes": "Strong technical background with leadership experience. Prefers hybrid work and is open to tech lead roles."
+}

@@ -1,0 +1,138 @@
+{
+  "cover_letter_templates": {
+    "tech_general": {
+      "name": "Technology - General",
+      "opening": "I am excited to apply for the {position} position at {company}. With {years} years of experience in {field}, I am confident that my technical expertise and passion for innovation make me an ideal candidate for your team.",
+      "body": "In my current role as {current_position} at {current_company}, I have {key_achievement}. My experience with {top_skills} has enabled me to {relevant_accomplishment}. I am particularly drawn to {company} because of your commitment to {company_value} and your innovative approach to {industry_focus}.",
+      "closing": "I would welcome the opportunity to discuss how my technical skills and enthusiasm can contribute to {company}'s continued success. Thank you for your consideration, and I look forward to hearing from you soon."
+    },
+    "finance": {
+      "name": "Finance & Banking",
+      "opening": "I am writing to express my strong interest in the {position} role at {company}. With {years} years of experience in financial services and a proven track record of {key_strength}, I am excited about the opportunity to contribute to your team.",
+      "body": "Throughout my career, I have developed expertise in {relevant_skills} and have consistently delivered results that exceed expectations. At {current_company}, I {specific_achievement}, which demonstrates my ability to drive financial performance and support business objectives.",
+      "closing": "I am eager to bring my analytical skills and financial acumen to {company} and would appreciate the opportunity to discuss how I can contribute to your organization's growth."
+    },
+    "healthcare": {
+      "name": "Healthcare & Medical",
+      "opening": "I am passionate about advancing healthcare through my work, and I am excited to apply for the {position} position at {company}. With {years} years of experience in healthcare and a commitment to improving patient outcomes, I believe I would be a valuable addition to your team.",
+      "body": "In my role as {current_position}, I have focused on {healthcare_focus} and have achieved {healthcare_achievement}. My experience in {medical_skills} and dedication to evidence-based practice align well with {company}'s mission to {company_mission}.",
+      "closing": "I would welcome the opportunity to discuss how my healthcare expertise and commitment to excellence can support {company}'s important work in improving lives."
+    },
+    "marketing": {
+      "name": "Marketing & Communications",
+      "opening": "I am thrilled to apply for the {position} role at {company}. As a creative marketing professional with {years} years of experience, I am excited about the opportunity to help {company} reach new audiences and achieve your business goals.",
+      "body": "My experience in {marketing_channels} has resulted in {marketing_achievement}. I am particularly skilled in {marketing_skills} and have a proven ability to {marketing_strength}. {company}'s innovative approach to {marketing_focus} aligns perfectly with my passion for creative, data-driven marketing.",
+      "closing": "I would love to discuss how my marketing expertise and creative vision can contribute to {company}'s continued growth and brand success."
+    }
+  },
+  "why_interested_responses": {
+    "company_mission": [
+      "I am drawn to {company} because of your commitment to {mission_value} and your positive impact on {impact_area}.",
+      "Your company's mission to {mission_statement} resonates deeply with my personal values and career aspirations.",
+      "{company}'s reputation for {company_strength} and dedication to {focus_area} makes this an ideal opportunity for me."
+    ],
+    "role_alignment": [
+      "This role aligns perfectly with my experience in {relevant_field} and my passion for {interest_area}.",
+      "The opportunity to {role_responsibility} at {company} represents the next logical step in my career growth.",
+      "I am excited about the chance to apply my {key_skill} expertise to help {company} achieve {company_goal}."
+    ],
+    "growth_opportunity": [
+      "I see this position as an excellent opportunity to expand my skills in {skill_area} while contributing to {company}'s success.",
+      "The chance to work with {company}'s talented team and learn from industry leaders is incredibly appealing to me.",
+      "This role offers the perfect balance of utilizing my existing expertise and challenging me to grow in {growth_area}."
+    ]
+  },
+  "strength_responses": {
+    "technical": {
+      "problem_solving": "Strong analytical and problem-solving abilities, with experience troubleshooting complex technical issues and implementing effective solutions.",
+      "technical_expertise": "Deep technical expertise in {technology_stack} with {years} years of hands-on development experience.",
+      "system_design": "Experience designing and implementing scalable systems that can handle high-volume, mission-critical operations.",
+      "code_quality": "Commitment to writing clean, maintainable code and following best practices for software development.",
+      "learning": "Quick learner who stays current with emerging technologies and industry trends."
+    },
+    "leadership": {
+      "team_management": "Proven ability to lead and mentor development teams, fostering collaboration and driving project success.",
+      "project_leadership": "Experience managing complex projects from conception to delivery, ensuring on-time and on-budget completion.",
+      "cross_functional": "Strong skills in working across departments and with stakeholders to align technical solutions with business objectives.",
+      "mentoring": "Passionate about mentoring junior developers and helping team members grow their technical skills.",
+      "strategic_thinking": "Ability to think strategically about technology decisions and their impact on long-term business goals."
+    },
+    "communication": {
+      "technical_communication": "Excellent ability to explain complex technical concepts to non-technical stakeholders.",
+      "documentation": "Strong documentation skills, ensuring knowledge is preserved and easily accessible to team members.",
+      "presentation": "Comfortable presenting to both technical and executive audiences, with experience in client-facing roles.",
+      "collaboration": "Effective collaborator who thrives in team environments and values diverse perspectives.",
+      "active_listening": "Strong listening skills that help me understand requirements and deliver solutions that meet actual needs."
+    }
+  },
+  "experience_descriptions": {
+    "software_engineer": {
+      "general": "I have {years} years of experience as a software engineer, specializing in {primary_technology}. In my current role at {company}, I {primary_responsibility} and have contributed to {project_type} projects serving {scale} users.",
+      "full_stack": "As a full-stack developer with {years} years of experience, I have worked across the entire technology stack, from {frontend_tech} frontends to {backend_tech} backends, with expertise in {database_tech} databases.",
+      "senior": "In my {years} years as a senior software engineer, I have led the development of {project_scale} applications, mentored {team_size} junior developers, and architected solutions that {business_impact}."
+    },
+    "data_scientist": {
+      "general": "With {years} years of experience in data science, I specialize in {data_specialty} and have applied machine learning techniques to solve complex business problems in {industry}.",
+      "ml_focus": "My expertise in machine learning and statistical analysis has enabled me to build predictive models that {ml_achievement} and drive data-driven decision making.",
+      "business_impact": "I have successfully translated complex data insights into actionable business recommendations, resulting in {business_outcome}."
+    },
+    "product_manager": {
+      "general": "As a product manager with {years} years of experience, I have led the development and launch of {product_count} products that have generated {revenue_impact} in revenue.",
+      "growth": "My focus on growth product management has resulted in {growth_metric} improvements in user engagement and {retention_improvement} in customer retention.",
+      "technical": "With a technical background and {years} years in product management, I bridge the gap between engineering teams and business stakeholders to deliver successful products."
+    }
+  },
+  "goal_responses": {
+    "career_growth": [
+      "My goal is to continue growing as a {target_role} while taking on increasing technical and leadership responsibilities.",
+      "I aim to expand my expertise in {growth_area} and contribute to innovative projects that have meaningful impact.",
+      "I want to develop my skills in {skill_area} while mentoring others and helping build high-performing teams."
+    ],
+    "industry_impact": [
+      "I am passionate about using technology to solve real-world problems and make a positive impact in {industry}.",
+      "My goal is to work on products and solutions that improve people's lives and contribute to {social_impact}.",
+      "I want to be part of a team that is pushing the boundaries of what's possible in {technology_area}."
+    ],
+    "company_specific": [
+      "I see {company} as the ideal place to achieve my goal of {specific_goal} while contributing to your mission of {company_mission}.",
+      "This role at {company} represents the perfect opportunity to combine my passion for {passion_area} with my professional expertise.",
+      "I am excited about the opportunity to grow my career at {company} and help drive innovation in {innovation_area}."
+    ]
+  },
+  "response_customization": {
+    "personalization_variables": [
+      "{company}",
+      "{position}",
+      "{years}",
+      "{field}",
+      "{current_position}",
+      "{current_company}",
+      "{key_achievement}",
+      "{top_skills}",
+      "{company_value}",
+      "{industry_focus}",
+      "{mission_statement}",
+      "{relevant_field}",
+      "{technology_stack}",
+      "{primary_technology}",
+      "{business_impact}"
+    ],
+    "tone_variations": {
+      "formal": {
+        "greeting": "Dear Hiring Manager,",
+        "closing": "Sincerely,",
+        "language_style": "professional"
+      },
+      "conversational": {
+        "greeting": "Hello,",
+        "closing": "Best regards,",
+        "language_style": "approachable"
+      },
+      "enthusiastic": {
+        "greeting": "Hello!",
+        "closing": "Looking forward to hearing from you!",
+        "language_style": "energetic"
+      }
+    }
+  }
+}

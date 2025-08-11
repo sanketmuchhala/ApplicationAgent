@@ -1,0 +1,3 @@
+[console_scripts]
+job-agent = job_application_agent.cli:main
+job-agent-server = job_application_agent.server:main

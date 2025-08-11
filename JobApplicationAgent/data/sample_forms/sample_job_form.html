@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer Application - TechCorp</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Apply for Software Engineer Position</h1>
+        <h2>TechCorp - Remote Opportunity</h2>
+        
+        <form method="POST" action="/submit-application" enctype="multipart/form-data">
+            <!-- Personal Information Section -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                
+                <div class="form-group">
+                    <label for="first_name">First Name *</label>
+                    <input type="text" id="first_name" name="first_name" required maxlength="50">
+                </div>
+                
+                <div class="form-group">
+                    <label for="last_name">Last Name *</label>
+                    <input type="text" id="last_name" name="last_name" required maxlength="50">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required maxlength="100">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+                </div>
+                
+                <div class="form-group">
+                    <label for="linkedin">LinkedIn Profile URL</label>
+                    <input type="url" id="linkedin" name="linkedin_url" placeholder="https://linkedin.com/in/yourprofile">
+                </div>
+                
+                <div class="form-group">
+                    <label for="github">GitHub Profile URL</label>
+                    <input type="url" id="github" name="github_url" placeholder="https://github.com/yourusername">
+                </div>
+            </fieldset>
+            
+            <!-- Work Experience Section -->
+            <fieldset>
+                <legend>Work Experience</legend>
+                
+                <div class="form-group">
+                    <label for="years_experience">Years of Software Development Experience *</label>
+                    <select id="years_experience" name="years_experience" required>
+                        <option value="">Select...</option>
+                        <option value="0-1">0-1 years</option>
+                        <option value="2-3">2-3 years</option>
+                        <option value="4-5">4-5 years</option>
+                        <option value="6-8">6-8 years</option>
+                        <option value="9+">9+ years</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="current_company">Current/Most Recent Company</label>
+                    <input type="text" id="current_company" name="current_company" maxlength="100">
+                </div>
+                
+                <div class="form-group">
+                    <label for="current_position">Current/Most Recent Position</label>
+                    <input type="text" id="current_position" name="current_position" maxlength="100">
+                </div>
+                
+                <div class="form-group">
+                    <label for="technical_skills">Technical Skills (comma-separated) *</label>
+                    <textarea id="technical_skills" name="technical_skills" required rows="3" 
+                             placeholder="JavaScript, Python, React, Node.js, AWS..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="key_achievement">Describe your most significant professional achievement *</label>
+                    <textarea id="key_achievement" name="key_achievement" required rows="4" maxlength="500"
+                             placeholder="Tell us about a project, improvement, or accomplishment you're most proud of..."></textarea>
+                </div>
+            </fieldset>
+            
+            <!-- Education Section -->
+            <fieldset>
+                <legend>Education</legend>
+                
+                <div class="form-group">
+                    <label for="education_level">Highest Level of Education *</label>
+                    <select id="education_level" name="education_level" required>
+                        <option value="">Select...</option>
+                        <option value="high_school">High School</option>
+                        <option value="associate">Associate's Degree</option>
+                        <option value="bachelor">Bachelor's Degree</option>
+                        <option value="master">Master's Degree</option>
+                        <option value="phd">PhD</option>
+                        <option value="bootcamp">Coding Bootcamp</option>
+                        <option value="self_taught">Self-Taught</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="field_of_study">Field of Study</label>
+                    <input type="text" id="field_of_study" name="field_of_study" 
+                           placeholder="Computer Science, Software Engineering, etc.">
+                </div>
+                
+                <div class="form-group">
+                    <label for="university">University/Institution</label>
+                    <input type="text" id="university" name="university" maxlength="100">
+                </div>
+            </fieldset>
+            
+            <!-- Position Details Section -->
+            <fieldset>
+                <legend>Position Details</legend>
+                
+                <div class="form-group">
+                    <label for="salary_expectation">Salary Expectation (Annual USD) *</label>
+                    <select id="salary_expectation" name="salary_expectation" required>
+                        <option value="">Select...</option>
+                        <option value="50k-70k">$50,000 - $70,000</option>
+                        <option value="70k-90k">$70,000 - $90,000</option>
+                        <option value="90k-120k">$90,000 - $120,000</option>
+                        <option value="120k-150k">$120,000 - $150,000</option>
+                        <option value="150k+">$150,000+</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="remote_preference">Remote Work Preference *</label>
+                    <div class="radio-group">
+                        <input type="radio" id="remote_only" name="remote_preference" value="remote_only" required>
+                        <label for="remote_only">Remote Only</label>
+                        
+                        <input type="radio" id="hybrid" name="remote_preference" value="hybrid">
+                        <label for="hybrid">Hybrid (2-3 days remote)</label>
+                        
+                        <input type="radio" id="office" name="remote_preference" value="office">
+                        <label for="office">In Office</label>
+                        
+                        <input type="radio" id="flexible" name="remote_preference" value="flexible">
+                        <label for="flexible">Flexible</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="start_date">Earliest Start Date *</label>
+                    <input type="date" id="start_date" name="start_date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="work_authorization">Work Authorization Status *</label>
+                    <select id="work_authorization" name="work_authorization" required>
+                        <option value="">Select...</option>
+                        <option value="citizen">US Citizen</option>
+                        <option value="permanent_resident">Permanent Resident</option>
+                        <option value="work_visa">Have Work Visa</option>
+                        <option value="need_sponsorship">Need Visa Sponsorship</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="willing_to_relocate">Willing to Relocate?</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="willing_to_relocate" name="willing_to_relocate" value="yes">
+                        <label for="willing_to_relocate">Yes, I am willing to relocate for this position</label>
+                    </div>
+                </div>
+            </fieldset>
+            
+            <!-- Additional Information Section -->
+            <fieldset>
+                <legend>Additional Information</legend>
+                
+                <div class="form-group">
+                    <label for="why_interested">Why are you interested in working at TechCorp? *</label>
+                    <textarea id="why_interested" name="why_interested" required rows="4" maxlength="1000"
+                             placeholder="Tell us what attracts you to our company and this role..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cover_letter_text">Cover Letter</label>
+                    <textarea id="cover_letter_text" name="cover_letter_text" rows="6" maxlength="2000"
+                             placeholder="Optional: Write a personalized cover letter for this position..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="additional_info">Additional Information</label>
+                    <textarea id="additional_info" name="additional_info" rows="3" maxlength="500"
+                             placeholder="Any other information you'd like us to know..."></textarea>
+                </div>
+            </fieldset>
+            
+            <!-- File Uploads Section -->
+            <fieldset>
+                <legend>Documents</legend>
+                
+                <div class="form-group">
+                    <label for="resume">Resume/CV *</label>
+                    <input type="file" id="resume" name="resume" required 
+                           accept=".pdf,.doc,.docx" 
+                           data-help="PDF, DOC, or DOCX format, max 5MB">
+                </div>
+                
+                <div class="form-group">
+                    <label for="cover_letter_file">Cover Letter (Optional)</label>
+                    <input type="file" id="cover_letter_file" name="cover_letter_file" 
+                           accept=".pdf,.doc,.docx"
+                           data-help="PDF, DOC, or DOCX format, max 3MB">
+                </div>
+                
+                <div class="form-group">
+                    <label for="portfolio">Portfolio/Work Samples (Optional)</label>
+                    <input type="file" id="portfolio" name="portfolio" 
+                           accept=".pdf,.zip"
+                           data-help="PDF or ZIP format, max 10MB">
+                </div>
+            </fieldset>
+            
+            <!-- Consent and Submission -->
+            <fieldset>
+                <legend>Consent & Submission</legend>
+                
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="privacy_consent" name="privacy_consent" required>
+                        <label for="privacy_consent">
+                            I consent to the processing of my personal data for recruitment purposes *
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="marketing_consent" name="marketing_consent">
+                        <label for="marketing_consent">
+                            I would like to receive updates about TechCorp careers and opportunities
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn-primary">Submit Application</button>
+                    <button type="button" class="btn-secondary">Save Draft</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    
+    <!-- Form Enhancement Script -->
+    <script>
+        // Add some dynamic behavior to demonstrate complex forms
+        document.getElementById('education_level').addEventListener('change', function() {
+            const fieldOfStudy = document.getElementById('field_of_study').parentElement;
+            const university = document.getElementById('university').parentElement;
+            
+            if (this.value === 'self_taught' || this.value === 'bootcamp') {
+                fieldOfStudy.style.display = 'none';
+                university.style.display = 'none';
+            } else {
+                fieldOfStudy.style.display = 'block';
+                university.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

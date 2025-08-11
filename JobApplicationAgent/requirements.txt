@@ -1,0 +1,31 @@
+# MCP and Core Dependencies
+mcp>=1.0.0
+pydantic>=2.0.0
+httpx>=0.25.0
+
+# AI Provider Integration
+openai>=1.0.0  # For DeepSeek API compatibility
+tiktoken>=0.5.0  # Token counting
+
+# Text Processing and Matching
+fuzzywuzzy>=0.18.0  # Fallback matching
+python-levenshtein>=0.12.0
+beautifulsoup4>=4.12.0
+
+# Security and Encryption
+cryptography>=41.0.0
+
+# Web Framework and API
+fastapi>=0.104.0
+uvicorn>=0.24.0
+python-multipart>=0.0.6
+
+# CLI and Configuration
+click>=8.1.0
+rich>=13.0.0
+python-dotenv>=1.0.0
+
+# Development and Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+aiofiles>=23.2.0
