@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Engineer - InnovateLabs Startup Application</title>
+</head>
+<body>
+    <h1>AI Engineer - InnovateLabs</h1>
+    <p>Early-stage AI startup | Equity + Competitive Salary | San Francisco/Remote</p>
+    
+    <form id="startupJobForm" action="/apply" method="POST">
+        
+        <!-- Contact Info -->
+        <div class="section">
+            <h2>Contact Information</h2>
+            
+            <input type="text" name="full_name" placeholder="Full Name" required>
+            <input type="email" name="email_address" placeholder="Email" required>
+            <input type="tel" name="phone_num" placeholder="Phone Number">
+            <input type="text" name="current_location" placeholder="Current Location (City, State)">
+            
+            <label for="linkedin_profile">LinkedIn</label>
+            <input type="url" name="linkedin_profile" id="linkedin_profile" placeholder="https://linkedin.com/in/yourname">
+            
+            <label for="github_profile">GitHub</label>
+            <input type="url" name="github_profile" id="github_profile" placeholder="https://github.com/yourusername">
+            
+            <label for="personal_website">Personal Website/Portfolio</label>
+            <input type="url" name="personal_website" id="personal_website">
+        </div>
+
+        <!-- Experience -->
+        <div class="section">
+            <h2>Experience</h2>
+            
+            <label for="current_role">What's your current role?</label>
+            <input type="text" name="current_role" id="current_role" placeholder="e.g., Senior ML Engineer at Google">
+            
+            <label for="total_experience">Total years in AI/ML/Data Science</label>
+            <select name="total_experience" id="total_experience">
+                <option value="">Choose...</option>
+                <option value="0-1">0-1 years</option>
+                <option value="2-3">2-3 years</option>
+                <option value="4-5">4-5 years</option>
+                <option value="6+">6+ years</option>
+            </select>
+            
+            <label for="startup_experience">Have you worked at startups before?</label>
+            <select name="startup_experience" id="startup_experience">
+                <option value="">Choose...</option>
+                <option value="no">No startup experience</option>
+                <option value="yes-small">Yes, early stage (seed/Series A)</option>
+                <option value="yes-growth">Yes, growth stage (Series B+)</option>
+                <option value="founded">I've founded a startup</option>
+            </select>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="section">
+            <h2>Technical Expertise</h2>
+            
+            <label for="primary_languages">Primary programming languages</label>
+            <input type="text" name="primary_languages" id="primary_languages" 
+                   placeholder="e.g., Python, JavaScript, Go">
+            
+            <label>AI/ML specialization (select all that apply):</label>
+            <div class="checkbox-group">
+                <input type="checkbox" name="ai_specialization" value="nlp" id="nlp">
+                <label for="nlp">Natural Language Processing</label>
+                
+                <input type="checkbox" name="ai_specialization" value="computer_vision" id="cv">
+                <label for="cv">Computer Vision</label>
+                
+                <input type="checkbox" name="ai_specialization" value="deep_learning" id="dl">
+                <label for="dl">Deep Learning</label>
+                
+                <input type="checkbox" name="ai_specialization" value="reinforcement_learning" id="rl">
+                <label for="rl">Reinforcement Learning</label>
+                
+                <input type="checkbox" name="ai_specialization" value="mlops" id="mlops">
+                <label for="mlops">MLOps/ML Engineering</label>
+                
+                <input type="checkbox" name="ai_specialization" value="llm" id="llm">
+                <label for="llm">Large Language Models</label>
+                
+                <input type="checkbox" name="ai_specialization" value="generative_ai" id="gen_ai">
+                <label for="gen_ai">Generative AI</label>
+            </div>
+            
+            <label for="cloud_experience">Cloud platform experience</label>
+            <input type="text" name="cloud_experience" id="cloud_experience" 
+                   placeholder="e.g., AWS, GCP, Azure - specific services you've used">
+            
+            <label for="frameworks_tools">Favorite ML frameworks/tools</label>
+            <input type="text" name="frameworks_tools" id="frameworks_tools" 
+                   placeholder="e.g., PyTorch, TensorFlow, HuggingFace, Langchain">
+        </div>
+
+        <!-- Project Experience -->
+        <div class="section">
+            <h2>Project Showcase</h2>
+            
+            <label for="best_project">Tell us about your best AI/ML project</label>
+            <textarea name="best_project" id="best_project" rows="4" 
+                      placeholder="What did you build? What was the impact? What technologies did you use?"></textarea>
+            
+            <label for="production_systems">Have you deployed ML models to production?</label>
+            <select name="production_systems" id="production_systems">
+                <option value="">Choose...</option>
+                <option value="no">No production experience</option>
+                <option value="small">Yes, small scale (< 1000 users)</option>
+                <option value="medium">Yes, medium scale (1k-100k users)</option>
+                <option value="large">Yes, large scale (100k+ users)</option>
+            </select>
+            
+            <label for="github_repos">Link to your best GitHub repository</label>
+            <input type="url" name="github_repos" id="github_repos" 
+                   placeholder="https://github.com/username/awesome-ai-project">
+        </div>
+
+        <!-- Startup Fit -->
+        <div class="section">
+            <h2>Startup Fit</h2>
+            
+            <label for="why_startup">Why do you want to work at a startup?</label>
+            <textarea name="why_startup" id="why_startup" rows="3" 
+                      placeholder="What attracts you to the startup environment?"></textarea>
+            
+            <label for="risk_comfort">How comfortable are you with uncertainty and rapid changes?</label>
+            <select name="risk_comfort" id="risk_comfort">
+                <option value="">Choose...</option>
+                <option value="very_comfortable">Very comfortable - I thrive in chaos</option>
+                <option value="comfortable">Comfortable - I can adapt</option>
+                <option value="neutral">Neutral - depends on the situation</option>
+                <option value="prefer_structure">I prefer more structured environments</option>
+            </select>
+            
+            <label for="equity_interest">Are you interested in equity compensation?</label>
+            <select name="equity_interest" id="equity_interest">
+                <option value="">Choose...</option>
+                <option value="very_interested">Very interested - it's a major factor</option>
+                <option value="somewhat">Somewhat interested</option>
+                <option value="neutral">Neutral - depends on the package</option>
+                <option value="prefer_salary">I prefer higher salary over equity</option>
+            </select>
+            
+            <label for="wear_many_hats">How do you feel about wearing many hats?</label>
+            <select name="wear_many_hats" id="wear_many_hats">
+                <option value="">Choose...</option>
+                <option value="love_it">Love it - I want to do everything</option>
+                <option value="comfortable">Comfortable - within reason</option>
+                <option value="prefer_focus">I prefer to focus on my specialty</option>
+            </select>
+        </div>
+
+        <!-- Innovation & Learning -->
+        <div class="section">
+            <h2>Innovation & Learning</h2>
+            
+            <label for="latest_ai_trend">What's the most exciting recent development in AI?</label>
+            <textarea name="latest_ai_trend" id="latest_ai_trend" rows="2" 
+                      placeholder="What has you most excited in AI right now?"></textarea>
+            
+            <label for="learning_method">How do you stay current with AI/ML developments?</label>
+            <textarea name="learning_method" id="learning_method" rows="2" 
+                      placeholder="Papers, courses, communities, experiments?"></textarea>
+            
+            <label for="failure_story">Tell us about a time an AI project failed and what you learned</label>
+            <textarea name="failure_story" id="failure_story" rows="3" 
+                      placeholder="We all have failures - what did you learn from yours?"></textarea>
+        </div>
+
+        <!-- Work Preferences -->
+        <div class="section">
+            <h2>Work Preferences</h2>
+            
+            <label for="work_style">Preferred work arrangement</label>
+            <select name="work_style" id="work_style">
+                <option value="">Choose...</option>
+                <option value="remote">Fully remote</option>
+                <option value="hybrid">Hybrid (some office time)</option>
+                <option value="office">Mostly in office</option>
+                <option value="flexible">Flexible/varies</option>
+            </select>
+            
+            <label for="timezone">What timezone are you in?</label>
+            <input type="text" name="timezone" id="timezone" placeholder="e.g., PST, EST, GMT">
+            
+            <label for="availability">When could you start?</label>
+            <select name="availability" id="availability">
+                <option value="">Choose...</option>
+                <option value="immediately">Immediately</option>
+                <option value="2_weeks">2 weeks notice</option>
+                <option value="1_month">1 month notice</option>
+                <option value="2_months">2+ months</option>
+            </select>
+            
+            <label for="salary_range">Salary expectations (USD, annual)</label>
+            <select name="salary_range" id="salary_range">
+                <option value="">Prefer not to say</option>
+                <option value="80k-100k">$80k - $100k</option>
+                <option value="100k-130k">$100k - $130k</option>
+                <option value="130k-160k">$130k - $160k</option>
+                <option value="160k-200k">$160k - $200k</option>
+                <option value="200k+">$200k+</option>
+            </select>
+        </div>
+
+        <!-- Cultural Fit -->
+        <div class="section">
+            <h2>Culture & Values</h2>
+            
+            <label for="work_motivation">What motivates you most in your work?</label>
+            <textarea name="work_motivation" id="work_motivation" rows="2" 
+                      placeholder="Impact? Learning? Building? Solving problems?"></textarea>
+            
+            <label for="ideal_team">Describe your ideal team environment</label>
+            <textarea name="ideal_team" id="ideal_team" rows="2" 
+                      placeholder="Collaborative? Independent? Fast-paced? Thoughtful?"></textarea>
+            
+            <label for="side_projects">Do you have any side projects or interests?</label>
+            <textarea name="side_projects" id="side_projects" rows="2" 
+                      placeholder="Open source, research, hobbies, other projects?"></textarea>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="section">
+            <h2>Additional Information</h2>
+            
+            <label for="visa_status">Visa/Work authorization status</label>
+            <select name="visa_status" id="visa_status">
+                <option value="">Choose...</option>
+                <option value="citizen">US Citizen</option>
+                <option value="green_card">Green Card holder</option>
+                <option value="h1b">H-1B</option>
+                <option value="opt">F-1 OPT/STEM OPT</option>
+                <option value="other_visa">Other work visa</option>
+                <option value="need_sponsorship">Need sponsorship</option>
+            </select>
+            
+            <label for="anything_else">Anything else you'd like us to know?</label>
+            <textarea name="anything_else" id="anything_else" rows="3" 
+                      placeholder="Awards, publications, unique experiences, questions for us?"></textarea>
+        </div>
+
+        <!-- Resume Upload -->
+        <div class="section">
+            <h2>Documents</h2>
+            
+            <label for="resume_upload">Resume/CV (required)</label>
+            <input type="file" name="resume_upload" id="resume_upload" 
+                   accept=".pdf,.doc,.docx" required>
+            
+            <label for="cover_letter_upload">Cover Letter (optional)</label>
+            <input type="file" name="cover_letter_upload" id="cover_letter_upload" 
+                   accept=".pdf,.doc,.docx">
+        </div>
+
+        <!-- Referrals -->
+        <div class="section">
+            <h2>How did you hear about us?</h2>
+            
+            <label for="referral_source">Source</label>
+            <select name="referral_source" id="referral_source">
+                <option value="">Choose...</option>
+                <option value="job_board">Job board (LinkedIn, Indeed, etc.)</option>
+                <option value="company_website">Company website</option>
+                <option value="employee_referral">Employee referral</option>
+                <option value="social_media">Social media</option>
+                <option value="tech_community">Tech community/forum</option>
+                <option value="conference">Conference/meetup</option>
+                <option value="university">University career center</option>
+                <option value="recruiter">Recruiter</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <label for="referrer_name">If referred by someone, who?</label>
+            <input type="text" name="referrer_name" id="referrer_name" 
+                   placeholder="Name of person who referred you">
+        </div>
+
+        <div class="terms">
+            <input type="checkbox" name="privacy_consent" id="privacy_consent" required>
+            <label for="privacy_consent">I consent to InnovateLabs processing my personal data for recruitment purposes</label>
+            
+            <input type="checkbox" name="future_opportunities" id="future_opportunities">
+            <label for="future_opportunities">Keep my information for future opportunities</label>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .section { margin-bottom: 30px; padding: 20px; border: 1px solid #eee; border-radius: 8px; }
+        .section h2 { margin-top: 0; color: #333; }
+        input, select, textarea { width: 100%; padding: 8px; margin: 5px 0 15px 0; border: 1px solid #ddd; border-radius: 4px; }
+        .checkbox-group { display: flex; flex-wrap: wrap; gap: 15px; margin: 10px 0; }
+        .checkbox-group input[type="checkbox"] { width: auto; margin-right: 5px; }
+        .checkbox-group label { width: auto; margin-right: 15px; }
+        .submit-btn { background: #007bff; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        .submit-btn:hover { background: #0056b3; }
+        .terms { margin: 20px 0; }
+        .terms input[type="checkbox"] { width: auto; margin-right: 8px; }
+        .terms label { width: auto; }
+    </style>
+</body>
+</html>

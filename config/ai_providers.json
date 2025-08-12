@@ -2,6 +2,8 @@
   "providers": {
     "deepseek": {
       "name": "DeepSeek",
+      "provider_type": "deepseek",
+      "enabled": true,
       "api_base": "https://api.deepseek.com/v1",
       "model": "deepseek-chat",
       "max_tokens": 4000,
@@ -21,8 +23,9 @@
     },
     "local": {
       "name": "Local Model",
+      "provider_type": "local",
       "enabled": false,
-      "model_path": "./models/local_model",
+      "model": "local",
       "max_tokens": 2048,
       "temperature": 0.1,
       "cost_per_1k_input": 0.0,
@@ -32,13 +35,13 @@
         "response_generation": false,
         "form_analysis": false,
         "context_understanding": false
-      },
-      "note": "Future implementation - local models for complete privacy"
+      }
     },
     "basic_matching": {
       "name": "Basic Text Matching",
+      "provider_type": "basic_matching",
       "enabled": true,
-      "description": "Fallback provider using fuzzy text matching",
+      "model": "basic",
       "cost_per_1k_input": 0.0,
       "cost_per_1k_output": 0.0,
       "features": {

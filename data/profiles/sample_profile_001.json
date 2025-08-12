@@ -1,0 +1,126 @@
+{
+  "profile_id": "sample_profile_001",
+  "created_at": "2025-08-11 21:05:29.765397",
+  "updated_at": "2025-08-11T21:05:29.765472",
+  "version": "1.0",
+  "personal": {
+    "first_name": "John",
+    "last_name": "Doe",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": null,
+    "address_line1": null,
+    "address_line2": null,
+    "city": "San Francisco",
+    "state": "CA",
+    "postal_code": null,
+    "country": "USA",
+    "work_authorization": "citizen",
+    "visa_type": null
+  },
+  "contact": {
+    "email": "john.doe@email.com",
+    "phone": "+1-555-0123",
+    "secondary_email": null,
+    "linkedin_url": "https://linkedin.com/in/johndoe",
+    "github_url": null,
+    "portfolio_url": "https://johndoe.dev",
+    "website": null,
+    "twitter_handle": null
+  },
+  "experience": [
+    {
+      "company": "TechCorp",
+      "position": "Senior Software Engineer",
+      "start_date": "2022-01-01",
+      "end_date": null,
+      "description": "Leading development of web applications",
+      "key_achievements": [
+        "Improved performance by 40%",
+        "Led team of 5 developers"
+      ],
+      "technologies": [],
+      "skills_developed": [],
+      "location": null,
+      "employment_type": "full_time",
+      "is_current": false
+    },
+    {
+      "company": "StartupXYZ",
+      "position": "Software Engineer",
+      "start_date": "2020-06-01",
+      "end_date": "2021-12-31",
+      "description": "Full-stack development",
+      "key_achievements": [
+        "Built MVP in 3 months",
+        "Reduced bugs by 60%"
+      ],
+      "technologies": [],
+      "skills_developed": [],
+      "location": null,
+      "employment_type": "full_time",
+      "is_current": false
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Technology",
+      "degree": "Bachelor of Science",
+      "field_of_study": "Computer Science",
+      "start_date": "2016-09-01",
+      "end_date": "2020-05-01",
+      "gpa": 3.8,
+      "honors": null,
+      "relevant_coursework": [],
+      "activities": [],
+      "location": null,
+      "is_current": false
+    }
+  ],
+  "technical_skills": [
+    "Python",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "PostgreSQL",
+    "AWS"
+  ],
+  "soft_skills": [],
+  "certifications": [],
+  "languages": {},
+  "compensation": {
+    "current_salary": 120000,
+    "desired_salary_min": 140000,
+    "desired_salary_max": 180000,
+    "salary_negotiable": true,
+    "hourly_rate": null,
+    "equity_interest": false,
+    "benefits_important": []
+  },
+  "job_preferences": {
+    "desired_roles": [
+      "Senior Software Engineer",
+      "Tech Lead",
+      "Engineering Manager"
+    ],
+    "industries": [
+      "Technology",
+      "FinTech",
+      "Healthcare"
+    ],
+    "company_sizes": [],
+    "employment_types": [],
+    "remote_preference": "hybrid",
+    "willing_to_relocate": false,
+    "preferred_locations": [],
+    "travel_comfort": null,
+    "start_date_availability": null,
+    "notice_period_weeks": 2
+  },
+  "cover_letter_templates": [],
+  "summary_statement": null,
+  "resume_path": null,
+  "cover_letter_path": null,
+  "tags": [],
+  "notes": null
+}

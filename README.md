@@ -34,40 +34,53 @@ An intelligent job application automation tool that uses DeepSeek's powerful AI 
 
 1. **Clone the repository**
 ```bash
-git clone <repository-url>
+git clone https://github.com/sanketmuchhala/JobApplicationAgent.git
 cd JobApplicationAgent
 ```
 
-2. **Install dependencies**
+2. **Create virtual environment**
+```bash
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+```
+
+3. **Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Set up environment variables**
+4. **Set up environment variables**
 ```bash
 cp .env.example .env
-# Edit .env with your DeepSeek API key
+# Edit .env file and add your DeepSeek API key:
+# DEEPSEEK_API_KEY=your_deepseek_api_key_here
 ```
 
-4. **Initialize the system**
+5. **Test the system**
 ```bash
-python src/cli.py setup
+python -m pytest test_basic.py -v --asyncio-mode=auto
 ```
 
-5. **Test AI connection**
+6. **Create your profile**
 ```bash
-python src/cli.py test-ai
+python setup_profile.py
+```
+
+7. **Start the MCP server**
+```bash
+python run_server.py
 ```
 
 ### Claude Desktop Integration
 
 1. **Update Claude Desktop configuration**
+Add this to your Claude Desktop config file:
 ```json
 {
   "mcpServers": {
     "job-application-agent": {
       "command": "python",
-      "args": ["/path/to/JobApplicationAgent/run_server.py"],
+      "args": ["/absolute/path/to/JobApplicationAgent/run_server.py"],
       "env": {
         "DEEPSEEK_API_KEY": "your_api_key_here"
       }
@@ -76,10 +89,16 @@ python src/cli.py test-ai
 }
 ```
 
-2. **Start the server**
+2. **Find your Claude Desktop config**
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+
+3. **Start the server**
 ```bash
 python run_server.py
 ```
+
+4. **Restart Claude Desktop** to load the new MCP server
 
 ## 🎯 Usage
 
@@ -87,17 +106,23 @@ python run_server.py
 
 **Create a profile:**
 ```bash
-python src/cli.py create-profile
+python setup_profile.py
 ```
 
-**Analyze a form:**
+**Analyze a job form:**
 ```bash
-python src/cli.py analyze-form --html-file form.html
+python analyze_job_form.py
 ```
 
-**View usage statistics:**
+**Test the system:**
 ```bash
-python src/cli.py usage-stats
+python test_basic.py
+python test_real_job_form.py
+```
+
+**Run the MCP server:**
+```bash
+python run_server.py
 ```
 
 ### MCP Tools (Claude Desktop)
@@ -230,22 +255,40 @@ The system uses multiple approaches for field matching:
 - **No Data Sharing**: Your information stays private
 - **Future Local Models**: Migration path to local AI
 
-## 🔧 Development
+## 🔧 Development & Testing
 
 ### Running Tests
 ```bash
-pytest tests/
+# Run all tests
+python -m pytest test_basic.py -v --asyncio-mode=auto
+
+# Run with real job form (requires API key)
+python test_real_job_form.py
+
+# Test semantic matching
+python test_semantic_matching.py
 ```
 
 ### Development Setup
 ```bash
 # Install development dependencies
 pip install -r requirements.txt
-pip install -e .
 
-# Run in development mode
-python src/cli.py --help
+# Run tests to verify setup
+python -m pytest test_basic.py -v --asyncio-mode=auto
+
+# Start development server
+python run_server.py
 ```
+
+### Troubleshooting
+
+**Common Issues:**
+
+1. **ModuleNotFoundError**: Ensure you're in the project directory and virtual environment is activated
+2. **API Connection Failed**: Check your DEEPSEEK_API_KEY in .env file
+3. **Async Test Issues**: Use `--asyncio-mode=auto` flag with pytest
+4. **Path Issues**: Use absolute paths in Claude Desktop configuration
 
 ### Adding New AI Providers
 

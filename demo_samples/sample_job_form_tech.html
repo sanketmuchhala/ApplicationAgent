@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior AI/ML Engineer - TechCorp Application</title>
+</head>
+<body>
+    <h1>Senior AI/ML Engineer Application - TechCorp</h1>
+    <p>Location: San Francisco, CA (Remote OK) | Salary: $150k - $200k</p>
+    
+    <form id="jobApplicationForm" action="/submit" method="POST">
+        <!-- Personal Information -->
+        <fieldset>
+            <legend>Personal Information</legend>
+            
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" required>
+            
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" required>
+            
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="address">Address</label>
+            <textarea id="address" name="address" rows="3"></textarea>
+            
+            <label for="linkedinUrl">LinkedIn Profile URL</label>
+            <input type="url" id="linkedinUrl" name="linkedinUrl">
+            
+            <label for="githubUrl">GitHub Profile URL</label>
+            <input type="url" id="githubUrl" name="githubUrl">
+        </fieldset>
+
+        <!-- Work Authorization -->
+        <fieldset>
+            <legend>Work Authorization</legend>
+            
+            <label for="workAuthorization">Are you authorized to work in the US?</label>
+            <select id="workAuthorization" name="workAuthorization" required>
+                <option value="">Select...</option>
+                <option value="citizen">US Citizen</option>
+                <option value="permanent_resident">Permanent Resident</option>
+                <option value="h1b">H-1B Visa</option>
+                <option value="opt">F-1 OPT</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <label for="sponsorship">Do you require visa sponsorship?</label>
+            <select id="sponsorship" name="sponsorship" required>
+                <option value="">Select...</option>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+        </fieldset>
+
+        <!-- Professional Experience -->
+        <fieldset>
+            <legend>Professional Experience</legend>
+            
+            <label for="currentTitle">Current/Most Recent Job Title</label>
+            <input type="text" id="currentTitle" name="currentTitle">
+            
+            <label for="currentCompany">Current/Most Recent Company</label>
+            <input type="text" id="currentCompany" name="currentCompany">
+            
+            <label for="yearsExperience">Years of AI/ML Experience</label>
+            <select id="yearsExperience" name="yearsExperience" required>
+                <option value="">Select...</option>
+                <option value="1-2">1-2 years</option>
+                <option value="3-5">3-5 years</option>
+                <option value="5-8">5-8 years</option>
+                <option value="8+">8+ years</option>
+            </select>
+            
+            <label for="pythonExperience">Years of Python Experience</label>
+            <select id="pythonExperience" name="pythonExperience">
+                <option value="">Select...</option>
+                <option value="1-2">1-2 years</option>
+                <option value="3-5">3-5 years</option>
+                <option value="5+">5+ years</option>
+            </select>
+        </fieldset>
+
+        <!-- Technical Skills -->
+        <fieldset>
+            <legend>Technical Skills</legend>
+            
+            <label>AI/ML Frameworks (check all that apply):</label>
+            <input type="checkbox" id="tensorflow" name="aiFrameworks" value="tensorflow">
+            <label for="tensorflow">TensorFlow</label>
+            
+            <input type="checkbox" id="pytorch" name="aiFrameworks" value="pytorch">
+            <label for="pytorch">PyTorch</label>
+            
+            <input type="checkbox" id="sklearn" name="aiFrameworks" value="scikit-learn">
+            <label for="sklearn">Scikit-learn</label>
+            
+            <input type="checkbox" id="keras" name="aiFrameworks" value="keras">
+            <label for="keras">Keras</label>
+            
+            <label>Cloud Platforms (check all that apply):</label>
+            <input type="checkbox" id="aws" name="cloudPlatforms" value="aws">
+            <label for="aws">AWS</label>
+            
+            <input type="checkbox" id="gcp" name="cloudPlatforms" value="gcp">
+            <label for="gcp">Google Cloud</label>
+            
+            <input type="checkbox" id="azure" name="cloudPlatforms" value="azure">
+            <label for="azure">Microsoft Azure</label>
+            
+            <label for="programmingLanguages">Programming Languages (comma separated)</label>
+            <input type="text" id="programmingLanguages" name="programmingLanguages" 
+                   placeholder="e.g., Python, R, Java, JavaScript">
+        </fieldset>
+
+        <!-- Education -->
+        <fieldset>
+            <legend>Education</legend>
+            
+            <label for="degreeLevel">Highest Degree</label>
+            <select id="degreeLevel" name="degreeLevel" required>
+                <option value="">Select...</option>
+                <option value="bachelors">Bachelor's</option>
+                <option value="masters">Master's</option>
+                <option value="phd">PhD</option>
+            </select>
+            
+            <label for="fieldOfStudy">Field of Study</label>
+            <input type="text" id="fieldOfStudy" name="fieldOfStudy" 
+                   placeholder="e.g., Computer Science, Data Science, Mathematics">
+            
+            <label for="university">University/Institution</label>
+            <input type="text" id="university" name="university">
+            
+            <label for="graduationYear">Graduation Year</label>
+            <input type="number" id="graduationYear" name="graduationYear" min="1990" max="2030">
+        </fieldset>
+
+        <!-- Job Preferences -->
+        <fieldset>
+            <legend>Job Preferences</legend>
+            
+            <label for="salaryExpectation">Salary Expectation (Annual, USD)</label>
+            <select id="salaryExpectation" name="salaryExpectation">
+                <option value="">Prefer not to say</option>
+                <option value="100k-120k">$100k - $120k</option>
+                <option value="120k-150k">$120k - $150k</option>
+                <option value="150k-180k">$150k - $180k</option>
+                <option value="180k-220k">$180k - $220k</option>
+                <option value="220k+">$220k+</option>
+            </select>
+            
+            <label for="startDate">Earliest Start Date</label>
+            <input type="date" id="startDate" name="startDate">
+            
+            <label for="workArrangement">Preferred Work Arrangement</label>
+            <select id="workArrangement" name="workArrangement">
+                <option value="">Select...</option>
+                <option value="remote">Fully Remote</option>
+                <option value="hybrid">Hybrid</option>
+                <option value="onsite">On-site</option>
+                <option value="flexible">Flexible</option>
+            </select>
+            
+            <label for="willingRelocate">Willing to relocate to San Francisco?</label>
+            <select id="willingRelocate" name="willingRelocate">
+                <option value="">Select...</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="maybe">Maybe</option>
+            </select>
+        </fieldset>
+
+        <!-- Custom Questions -->
+        <fieldset>
+            <legend>Additional Questions</legend>
+            
+            <label for="whyInterested">Why are you interested in this position? (500 words max)</label>
+            <textarea id="whyInterested" name="whyInterested" rows="5" maxlength="2500"></textarea>
+            
+            <label for="mlProject">Describe your most challenging ML project and your role in it (300 words max)</label>
+            <textarea id="mlProject" name="mlProject" rows="4" maxlength="1500"></textarea>
+            
+            <label for="aiEthics">How do you approach AI ethics and bias in your work? (200 words max)</label>
+            <textarea id="aiEthics" name="aiEthics" rows="3" maxlength="1000"></textarea>
+            
+            <label for="stayUpdated">How do you stay updated with the latest AI/ML developments?</label>
+            <textarea id="stayUpdated" name="stayUpdated" rows="2" maxlength="500"></textarea>
+        </fieldset>
+
+        <!-- File Uploads -->
+        <fieldset>
+            <legend>Documents</legend>
+            
+            <label for="resume">Resume/CV (PDF or Word) *</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+            
+            <label for="coverLetter">Cover Letter (Optional)</label>
+            <input type="file" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx">
+            
+            <label for="portfolio">Portfolio/Work Samples (Optional)</label>
+            <input type="file" id="portfolio" name="portfolio" accept=".pdf,.zip" multiple>
+        </fieldset>
+
+        <!-- Diversity & Inclusion (Optional) -->
+        <fieldset>
+            <legend>Diversity & Inclusion (Optional - Used for diversity reporting only)</legend>
+            
+            <label for="gender">Gender Identity</label>
+            <select id="gender" name="gender">
+                <option value="">Prefer not to answer</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="non-binary">Non-binary</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <label for="ethnicity">Race/Ethnicity</label>
+            <select id="ethnicity" name="ethnicity">
+                <option value="">Prefer not to answer</option>
+                <option value="asian">Asian</option>
+                <option value="black">Black/African American</option>
+                <option value="hispanic">Hispanic/Latino</option>
+                <option value="white">White</option>
+                <option value="native">Native American</option>
+                <option value="pacific">Pacific Islander</option>
+                <option value="multiracial">Multiracial</option>
+            </select>
+            
+            <label for="veteran">Are you a veteran?</label>
+            <select id="veteran" name="veteran">
+                <option value="">Prefer not to answer</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            
+            <label for="disability">Do you have a disability?</label>
+            <select id="disability" name="disability">
+                <option value="">Prefer not to answer</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </fieldset>
+
+        <div>
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms">I agree to TechCorp's Terms of Service and Privacy Policy *</label>
+        </div>
+        
+        <div>
+            <input type="checkbox" id="followUp" name="followUp">
+            <label for="followUp">I consent to be contacted about future opportunities</label>
+        </div>
+
+        <button type="submit">Submit Application</button>
+    </form>
+</body>
+</html>

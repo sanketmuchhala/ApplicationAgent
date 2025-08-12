@@ -1,7 +1,28 @@
 #!/usr/bin/env python3
 """
 AI Job Application Agent - MCP Server
-Enhanced with DeepSeek API integration for intelligent semantic matching
+
+This module implements the main MCP (Model Context Protocol) server for the
+Job Application Agent. It provides AI-powered job application automation
+through intelligent form analysis, field matching, and response generation.
+
+Key Features:
+- Multi-provider AI integration (DeepSeek, Local, Basic)
+- Intelligent form field analysis and matching
+- Contextual response generation
+- Cost tracking and budget management
+- Profile and application management
+- Claude Desktop integration
+
+The server exposes MCP tools for:
+- Profile management (create, update, retrieve)
+- AI-powered form analysis
+- Intelligent field matching
+- Response generation
+- Usage statistics and cost tracking
+
+Author: Sanket Muchhala
+License: MIT
 """
 
 import asyncio
@@ -21,6 +42,7 @@ from .models.form import Form
 from .services.ai_service import AIService
 from .services.deepseek_service import DeepSeekService
 from .services.local_service import LocalService
+from .services.basic_matching_service import BasicMatchingService
 from .services.semantic_matcher import SemanticMatcher
 from .services.form_analyzer import FormAnalyzer
 from .services.response_generator import ResponseGenerator
@@ -30,7 +52,26 @@ from .utils.paths import PathManager
 
 
 class JobApplicationAgentServer:
-    """Main MCP server for the Job Application Agent"""
+    """
+    Main MCP server for the Job Application Agent.
+    
+    This class orchestrates the entire job application automation system,
+    managing AI providers, user profiles, and form processing capabilities.
+    It implements the MCP protocol to integrate with Claude Desktop and
+    other MCP-compatible clients.
+    
+    Attributes:
+        server: The MCP server instance
+        config: AI provider configuration
+        ai_providers: Dictionary of available AI providers
+        current_provider: Currently active AI provider
+        storage_manager: Handles data persistence
+        profile_manager: Manages user profiles
+        semantic_matcher: AI-powered field matching
+        form_analyzer: Analyzes job application forms
+        response_generator: Generates contextual responses
+        path_manager: Manages file system paths
+    """
     
     def __init__(self):
         self.server = Server("job-application-agent")
@@ -164,6 +205,8 @@ class JobApplicationAgentServer:
                     service = DeepSeekService(provider_config.dict())
                 elif provider_config.provider_type == AIProviderType.LOCAL:
                     service = LocalService(provider_config.dict())
+                elif provider_config.provider_type == AIProviderType.BASIC_MATCHING:
+                    service = BasicMatchingService(provider_config.dict())
                 else:
                     continue  # Skip unsupported providers for now
                 

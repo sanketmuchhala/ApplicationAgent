@@ -1,0 +1,217 @@
+{
+  "profile_id": "sanket_muchhala_profile",
+  "created_at": "2025-08-11 22:21:51.795154",
+  "updated_at": "2025-08-11T22:21:51.795819",
+  "version": "1.0",
+  "personal": {
+    "first_name": "Sanket",
+    "last_name": "Muchhala",
+    "middle_name": null,
+    "preferred_name": null,
+    "date_of_birth": null,
+    "address_line1": null,
+    "address_line2": null,
+    "city": "Bloomington",
+    "state": "IN",
+    "postal_code": null,
+    "country": "USA",
+    "work_authorization": "citizen",
+    "visa_type": null
+  },
+  "contact": {
+    "email": "sanketmuchhala1@gmail.com",
+    "phone": "+1-812-778-4451",
+    "secondary_email": null,
+    "linkedin_url": "https://linkedin.com/in/sanket-muchhala",
+    "github_url": "https://github.com/sanketmuchhala",
+    "portfolio_url": "https://github.com/sanketmuchhala",
+    "website": null,
+    "twitter_handle": null
+  },
+  "experience": [
+    {
+      "company": "Progressive Insurance",
+      "position": "AI Engineer",
+      "start_date": "2024-05-01",
+      "end_date": null,
+      "description": "Building NLP workflows for claims data intake and deploying GPT-4 based document summarization tools",
+      "key_achievements": [
+        "Streamlined processing tasks by 25% using Python and Azure ML",
+        "Reduced review cycles for compliance and legal teams by 40%",
+        "Improved fraud detection precision by 22% through real-time anomaly models",
+        "Cut drift incidents by 35% with centralized model performance tracking"
+      ],
+      "technologies": [],
+      "skills_developed": [],
+      "location": null,
+      "employment_type": "full_time",
+      "is_current": false
+    },
+    {
+      "company": "Indiana University Bloomington",
+      "position": "Research Assistant - Generative AI",
+      "start_date": "2023-12-01",
+      "end_date": "2024-05-01",
+      "description": "Research in generative AI and esports analytics using GPT-4 and RAG pipelines",
+      "key_achievements": [
+        "Improved transcript accuracy by 18pp using GPT-4 RAG pipeline",
+        "Reduced latency 40% in chat feature via GPT-4 sentiment analysis",
+        "Processed over 200 hours of esports video on BigRed200 HPC system"
+      ],
+      "technologies": [],
+      "skills_developed": [],
+      "location": null,
+      "employment_type": "full_time",
+      "is_current": false
+    },
+    {
+      "company": "IBM",
+      "position": "Data Analyst",
+      "start_date": "2020-09-01",
+      "end_date": "2022-06-01",
+      "description": "End-to-end development of ML models and ETL workflows",
+      "key_achievements": [
+        "Led churn prediction model development, reducing customer attrition by 20%",
+        "Improved data availability and cut processing time by 15%",
+        "Raised dashboard reporting accuracy by 18%",
+        "Accelerated release cycles by 25% across internal products"
+      ],
+      "technologies": [],
+      "skills_developed": [],
+      "location": null,
+      "employment_type": "full_time",
+      "is_current": false
+    }
+  ],
+  "education": [
+    {
+      "institution": "Indiana University Bloomington",
+      "degree": "Master of Science",
+      "field_of_study": "Data Science",
+      "start_date": "2022-08-01",
+      "end_date": "2024-05-01",
+      "gpa": 3.8,
+      "honors": null,
+      "relevant_coursework": [],
+      "activities": [],
+      "location": null,
+      "is_current": false
+    },
+    {
+      "institution": "Thakur College of Engineering and Technology",
+      "degree": "Bachelor of Technology",
+      "field_of_study": "Information Technology",
+      "start_date": "2018-08-01",
+      "end_date": "2022-05-01",
+      "gpa": 3.7,
+      "honors": null,
+      "relevant_coursework": [],
+      "activities": [],
+      "location": null,
+      "is_current": false
+    }
+  ],
+  "technical_skills": [
+    "Python",
+    "SQL",
+    "R",
+    "JavaScript",
+    "Scikit-learn",
+    "TensorFlow",
+    "PyTorch",
+    "FastAPI",
+    "MLflow",
+    "SpaCy",
+    "GPT-4",
+    "LangChain",
+    "RAG",
+    "Agentic AI",
+    "Vector DBs",
+    "FAISS",
+    "NER",
+    "Text Classification",
+    "Summarization",
+    "Sentiment Analysis",
+    "Pandas",
+    "NumPy",
+    "PySpark",
+    "AWS",
+    "Azure",
+    "PostgreSQL",
+    "MySQL",
+    "Snowflake",
+    "Tableau",
+    "Power BI"
+  ],
+  "soft_skills": [],
+  "certifications": [
+    {
+      "name": "AWS Certified MLE Associate",
+      "issuer": "Amazon Web Services",
+      "date_issued": null,
+      "expiration_date": null,
+      "credential_id": null
+    },
+    {
+      "name": "Azure AI Fundamentals (AI-900)",
+      "issuer": "Microsoft",
+      "date_issued": null,
+      "expiration_date": null,
+      "credential_id": null
+    },
+    {
+      "name": "Databricks Generative AI Foundations",
+      "issuer": "Databricks",
+      "date_issued": null,
+      "expiration_date": null,
+      "credential_id": null
+    },
+    {
+      "name": "Google Data Analytics",
+      "issuer": "Google",
+      "date_issued": null,
+      "expiration_date": null,
+      "credential_id": null
+    }
+  ],
+  "languages": {},
+  "compensation": {
+    "current_salary": 120000,
+    "desired_salary_min": 140000,
+    "desired_salary_max": 180000,
+    "salary_negotiable": true,
+    "hourly_rate": null,
+    "equity_interest": false,
+    "benefits_important": []
+  },
+  "job_preferences": {
+    "desired_roles": [
+      "AI/ML Engineer",
+      "Senior AI Engineer",
+      "ML Engineer",
+      "Data Scientist",
+      "AI Research Engineer"
+    ],
+    "industries": [
+      "Technology",
+      "Insurance",
+      "Finance",
+      "Healthcare",
+      "Research"
+    ],
+    "company_sizes": [],
+    "employment_types": [],
+    "remote_preference": "hybrid",
+    "willing_to_relocate": false,
+    "preferred_locations": [],
+    "travel_comfort": null,
+    "start_date_availability": null,
+    "notice_period_weeks": 2
+  },
+  "cover_letter_templates": [],
+  "summary_statement": null,
+  "resume_path": "/Users/sanketmuchhala/Downloads/Sanket_Muchhala_AIML_Resume+(1)+(1).docx+(1).pdf",
+  "cover_letter_path": null,
+  "tags": [],
+  "notes": null
+}
