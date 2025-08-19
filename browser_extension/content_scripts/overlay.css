@@ -1,0 +1,549 @@
+/* JobApplicationAgent - Content Script Overlay Styles */
+
+/* Field Highlighting */
+.jaa-field-highlight {
+  border: 2px solid #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+  opacity: 0;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  position: absolute;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+.jaa-field-highlight.visible {
+  opacity: 1;
+}
+
+.jaa-field-highlight.high-confidence {
+  border-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+.jaa-field-highlight.medium-confidence {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+
+.jaa-field-highlight.low-confidence {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
+.jaa-confidence-tooltip {
+  position: absolute;
+  top: -25px;
+  right: -1px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.jaa-highlighted-field {
+  position: relative;
+}
+
+/* Form Detection Banner */
+.jaa-banner {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 400px;
+  min-width: 320px;
+}
+
+.jaa-form-detected {
+  border-left: 4px solid #10b981;
+}
+
+.jaa-banner-content {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 12px;
+}
+
+.jaa-banner-icon {
+  font-size: 24px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.jaa-banner-text {
+  flex: 1;
+}
+
+.jaa-banner-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.jaa-banner-subtitle {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.jaa-banner-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* Buttons */
+.jaa-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.jaa-btn-sm {
+  padding: 6px 10px;
+  font-size: 11px;
+}
+
+.jaa-btn-primary {
+  background: #4f46e5;
+  color: white;
+}
+
+.jaa-btn-primary:hover {
+  background: #3730a3;
+  transform: translateY(-1px);
+}
+
+.jaa-btn-secondary {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.jaa-btn-secondary:hover {
+  background: #e5e7eb;
+}
+
+.jaa-btn-icon {
+  font-size: 12px;
+  line-height: 1;
+}
+
+/* Progress Overlay */
+.jaa-progress-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10004;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.jaa-progress-overlay.visible {
+  opacity: 1;
+}
+
+.jaa-progress-overlay.hiding {
+  opacity: 0;
+}
+
+.jaa-progress-modal {
+  background: white;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 90vw;
+  max-height: 80vh;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.jaa-progress-header {
+  text-align: center;
+  padding: 24px 24px 16px;
+  background: linear-gradient(135deg, #4f46e5, #3730a3);
+  color: white;
+}
+
+.jaa-progress-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.jaa-progress-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+}
+
+.jaa-progress-header p {
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.jaa-progress-content {
+  padding: 24px;
+}
+
+.jaa-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.jaa-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #059669);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.jaa-progress-text {
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.jaa-field-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.jaa-field-progress-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.jaa-field-progress-item:last-child {
+  border-bottom: none;
+}
+
+.jaa-field-status {
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.jaa-field-status.filling {
+  animation: jaa-spin 1s linear infinite;
+}
+
+.jaa-field-name {
+  flex: 1;
+  font-size: 13px;
+  color: #374151;
+}
+
+/* Notifications */
+.jaa-notification {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 400px;
+  min-width: 300px;
+  border: 1px solid #e5e7eb;
+}
+
+.jaa-success-notification {
+  border-left: 4px solid #10b981;
+}
+
+.jaa-notification-content {
+  display: flex;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 12px;
+  position: relative;
+}
+
+.jaa-notification-icon {
+  font-size: 24px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.jaa-notification-text {
+  flex: 1;
+}
+
+.jaa-notification-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.jaa-notification-message {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.jaa-notification-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.jaa-notification-close:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* Floating Assistant */
+.jaa-floating-assistant {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  max-width: 350px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.jaa-assistant-content {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+}
+
+.jaa-assistant-avatar {
+  font-size: 32px;
+  line-height: 1;
+  margin-top: 4px;
+}
+
+.jaa-assistant-message p {
+  font-size: 13px;
+  color: #374151;
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+}
+
+.jaa-assistant-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Animations */
+@keyframes jaa-slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes jaa-bounce-in {
+  0% {
+    transform: scale(0.3) translateX(100%);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(0.9) translateX(0);
+  }
+  100% {
+    transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes jaa-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes jaa-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Form filling animations */
+.jaa-field-filling {
+  animation: jaa-pulse 2s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .jaa-banner,
+  .jaa-notification,
+  .jaa-floating-assistant {
+    max-width: calc(100vw - 40px);
+    min-width: auto;
+  }
+
+  .jaa-progress-modal {
+    width: calc(100vw - 40px);
+    max-width: none;
+  }
+
+  .jaa-banner-content,
+  .jaa-notification-content,
+  .jaa-assistant-content {
+    padding: 12px;
+  }
+
+  .jaa-banner-actions {
+    margin-left: 0;
+    margin-top: 8px;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .jaa-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .jaa-banner,
+  .jaa-notification,
+  .jaa-floating-assistant,
+  .jaa-progress-modal {
+    background: #1f2937;
+    border-color: #374151;
+    color: #f9fafb;
+  }
+
+  .jaa-banner-title,
+  .jaa-notification-title {
+    color: #f9fafb;
+  }
+
+  .jaa-banner-subtitle,
+  .jaa-notification-message,
+  .jaa-progress-text,
+  .jaa-field-name {
+    color: #d1d5db;
+  }
+
+  .jaa-btn-secondary {
+    background: #374151;
+    color: #d1d5db;
+    border-color: #4b5563;
+  }
+
+  .jaa-btn-secondary:hover {
+    background: #4b5563;
+  }
+
+  .jaa-progress-bar {
+    background: #374151;
+  }
+
+  .jaa-field-progress-item {
+    border-color: #374151;
+  }
+
+  .jaa-notification-close {
+    color: #9ca3af;
+  }
+
+  .jaa-notification-close:hover {
+    background: #374151;
+    color: #d1d5db;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .jaa-field-highlight {
+    border-width: 3px;
+  }
+
+  .jaa-field-highlight.high-confidence {
+    border-color: #059669;
+  }
+
+  .jaa-field-highlight.medium-confidence {
+    border-color: #d97706;
+  }
+
+  .jaa-field-highlight.low-confidence {
+    border-color: #dc2626;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .jaa-field-highlight,
+  .jaa-progress-overlay,
+  .jaa-progress-fill,
+  .jaa-field-status,
+  .jaa-btn {
+    transition: none;
+  }
+
+  .jaa-field-status.filling {
+    animation: none;
+  }
+
+  .jaa-field-filling {
+    animation: none;
+  }
+
+  @keyframes jaa-slide-in-right,
+  @keyframes jaa-bounce-in,
+  @keyframes jaa-spin,
+  @keyframes jaa-pulse {
+    from, to {
+      transform: none;
+      opacity: 1;
+    }
+  }
+}

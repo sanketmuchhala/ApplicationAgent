@@ -3,9 +3,9 @@ import re
 from datetime import datetime
 
 from .ai_service import AIService
-from ..models.form import FormField, FieldType
-from ..models.profile import UserProfile
-from ..models.ai_config import AIResponse
+from models.form import FormField, FieldType
+from models.profile import UserProfile
+from models.ai_config import AIResponse
 
 
 class ResponseGenerator:

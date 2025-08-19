@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Icon Generator for JobApplicationAgent</title>
+</head>
+<body>
+    <h1>JobApplicationAgent Icon Generator</h1>
+    <p>This page will help generate the required PNG icons from the SVG.</p>
+    
+    <!-- Canvas elements for different icon sizes -->
+    <div>
+        <h3>16x16 Icon</h3>
+        <canvas id="icon16" width="16" height="16"></canvas>
+        <button onclick="downloadIcon('icon16', 'icon-16.png')">Download 16x16</button>
+    </div>
+    
+    <div>
+        <h3>48x48 Icon</h3>
+        <canvas id="icon48" width="48" height="48"></canvas>
+        <button onclick="downloadIcon('icon48', 'icon-48.png')">Download 48x48</button>
+    </div>
+    
+    <div>
+        <h3>128x128 Icon</h3>
+        <canvas id="icon128" width="128" height="128"></canvas>
+        <button onclick="downloadIcon('icon128', 'icon-128.png')">Download 128x128</button>
+    </div>
+
+    <script>
+        // Create simple programmatic icons
+        function createIcon(canvasId, size) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, size, size);
+            
+            // Background circle
+            ctx.fillStyle = '#4F46E5';
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size/2 - 2, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Document icon (simple white rectangle)
+            const docSize = size * 0.4;
+            const docX = size * 0.25;
+            const docY = size * 0.2;
+            
+            ctx.fillStyle = 'white';
+            ctx.fillRect(docX, docY, docSize, docSize * 1.2);
+            
+            // Form lines (simple rectangles)
+            ctx.fillStyle = '#4F46E5';
+            const lineHeight = Math.max(1, size * 0.02);
+            const lineSpacing = size * 0.08;
+            const lineWidth = docSize * 0.7;
+            const linesStartY = docY + size * 0.08;
+            
+            for (let i = 0; i < 4; i++) {
+                ctx.fillRect(docX + size * 0.05, linesStartY + i * lineSpacing, lineWidth, lineHeight);
+            }
+            
+            // AI dot (green circle)
+            ctx.fillStyle = '#10B981';
+            ctx.beginPath();
+            ctx.arc(size * 0.75, size * 0.75, size * 0.12, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            // Small white dots for AI eyes
+            if (size >= 48) {
+                ctx.fillStyle = 'white';
+                const eyeSize = size * 0.02;
+                ctx.beginPath();
+                ctx.arc(size * 0.72, size * 0.72, eyeSize, 0, 2 * Math.PI);
+                ctx.fill();
+                
+                ctx.beginPath();
+                ctx.arc(size * 0.78, size * 0.72, eyeSize, 0, 2 * Math.PI);
+                ctx.fill();
+            }
+        }
+        
+        function downloadIcon(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        // Generate all icons on page load
+        window.onload = function() {
+            createIcon('icon16', 16);
+            createIcon('icon48', 48);
+            createIcon('icon128', 128);
+        };
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        canvas {
+            border: 1px solid #ccc;
+            margin: 10px 0;
+        }
+        
+        div {
+            margin: 20px 0;
+        }
+        
+        button {
+            background: #4F46E5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        
+        button:hover {
+            background: #3730a3;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobApplicationAgent</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <img src="../assets/icons/icon-48.png" alt="JobApplicationAgent" class="logo-icon">
+        <div class="logo-text">
+          <h1>JobApplicationAgent</h1>
+          <p>Smart Auto-Fill Assistant</p>
+        </div>
+      </div>
+      <div class="status-indicator" id="statusIndicator">
+        <span class="status-dot"></span>
+        <span class="status-text">Ready</span>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+      
+      <!-- Welcome Screen (First Time) -->
+      <div class="screen welcome-screen" id="welcomeScreen" style="display: none;">
+        <div class="welcome-icon">🚀</div>
+        <h2>Welcome to JobApplicationAgent!</h2>
+        <p>Let's set up your profile to start auto-filling job applications.</p>
+        <button class="btn btn-primary" id="startSetupBtn">Get Started</button>
+        <div class="features-list">
+          <div class="feature">✨ AI-powered form detection</div>
+          <div class="feature">⚡ One-click application filling</div>
+          <div class="feature">🔒 Local data storage (private)</div>
+        </div>
+      </div>
+
+      <!-- Form Detected Screen -->
+      <div class="screen form-detected-screen" id="formDetectedScreen" style="display: none;">
+        <div class="form-info">
+          <div class="form-icon">📋</div>
+          <h3>Job Application Detected!</h3>
+          <p class="form-details" id="formDetails">Found application form on this page</p>
+          <div class="confidence-score" id="confidenceScore">
+            <span class="confidence-label">Detection Confidence:</span>
+            <div class="confidence-bar">
+              <div class="confidence-fill" style="width: 85%"></div>
+            </div>
+            <span class="confidence-value">85%</span>
+          </div>
+        </div>
+        
+        <div class="form-actions">
+          <button class="btn btn-primary" id="analyzeFormBtn">
+            <span class="btn-icon">🔍</span>
+            Analyze & Preview
+          </button>
+          <button class="btn btn-secondary" id="quickFillBtn">
+            <span class="btn-icon">⚡</span>
+            Quick Fill
+          </button>
+        </div>
+
+        <div class="field-matches" id="fieldMatches" style="display: none;">
+          <h4>Field Matches Preview</h4>
+          <div class="field-list" id="fieldList">
+            <!-- Dynamic field matches will be inserted here -->
+          </div>
+          <div class="fill-actions">
+            <button class="btn btn-success" id="fillFormBtn">
+              <span class="btn-icon">✅</span>
+              Fill Form
+            </button>
+            <button class="btn btn-secondary" id="editBeforeFillBtn">
+              <span class="btn-icon">✏️</span>
+              Edit & Fill
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- No Form Screen -->
+      <div class="screen no-form-screen" id="noFormScreen">
+        <div class="no-form-icon">🔍</div>
+        <h3>No Job Application Form Found</h3>
+        <p>Navigate to a job application page and I'll automatically detect fillable forms.</p>
+        
+        <div class="supported-sites">
+          <h4>Works great with:</h4>
+          <div class="site-list">
+            <div class="site">LinkedIn Jobs</div>
+            <div class="site">Indeed</div>
+            <div class="site">Company Career Pages</div>
+            <div class="site">Workday</div>
+            <div class="site">Greenhouse</div>
+          </div>
+        </div>
+
+        <button class="btn btn-outline" id="scanPageBtn">
+          <span class="btn-icon">🔄</span>
+          Scan Current Page
+        </button>
+      </div>
+
+      <!-- Settings Screen -->
+      <div class="screen settings-screen" id="settingsScreen" style="display: none;">
+        <div class="settings-header">
+          <button class="btn btn-ghost" id="backBtn">
+            <span class="btn-icon">←</span>
+            Back
+          </button>
+          <h3>Settings</h3>
+        </div>
+
+        <div class="settings-sections">
+          <div class="settings-section">
+            <h4>Profile Management</h4>
+            <div class="profile-info" id="profileInfo">
+              <div class="profile-summary">
+                <strong id="profileName">No Profile</strong>
+                <span id="profileEmail"></span>
+              </div>
+              <button class="btn btn-outline" id="editProfileBtn">Edit Profile</button>
+            </div>
+          </div>
+
+          <div class="settings-section">
+            <h4>AI Provider</h4>
+            <select class="settings-select" id="aiProviderSelect">
+              <option value="free">Free (Limited)</option>
+              <option value="deepseek">DeepSeek (Recommended)</option>
+              <option value="gemini">Google Gemini</option>
+              <option value="local">Local Model</option>
+            </select>
+            <div class="ai-status" id="aiStatus">
+              <span class="status-indicator-small"></span>
+              <span>Not configured</span>
+            </div>
+          </div>
+
+          <div class="settings-section">
+            <h4>Usage & Costs</h4>
+            <div class="usage-stats" id="usageStats">
+              <div class="stat">
+                <span class="stat-label">Forms Filled:</span>
+                <span class="stat-value" id="formsFilledCount">0</span>
+              </div>
+              <div class="stat">
+                <span class="stat-label">This Month Cost:</span>
+                <span class="stat-value" id="monthlyCost">$0.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <button class="footer-btn" id="settingsBtn" title="Settings">
+        <span class="footer-icon">⚙️</span>
+      </button>
+      <button class="footer-btn" id="helpBtn" title="Help">
+        <span class="footer-icon">❓</span>
+      </button>
+      <button class="footer-btn" id="profileBtn" title="Profile">
+        <span class="footer-icon">👤</span>
+      </button>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+      <div class="spinner"></div>
+      <p id="loadingText">Processing...</p>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast" id="toast" style="display: none;">
+      <span class="toast-icon" id="toastIcon"></span>
+      <span class="toast-message" id="toastMessage"></span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

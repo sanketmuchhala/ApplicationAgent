@@ -2,9 +2,9 @@ from abc import ABC, abstractmethod
 from typing import Dict, List, Optional, Any, Tuple
 from datetime import datetime
 
-from ..models.ai_config import AIResponse, UsageMetrics
-from ..models.form import FormField
-from ..models.profile import UserProfile
+from models.ai_config import AIResponse, UsageMetrics
+from models.form import FormField
+from models.profile import UserProfile
 
 
 class AIService(ABC):

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobApplicationAgent Setup</title>
+  <link rel="stylesheet" href="setup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Progress indicator -->
+    <div class="progress-bar">
+      <div class="progress-step active" data-step="1">
+        <div class="step-number">1</div>
+        <div class="step-label">Welcome</div>
+      </div>
+      <div class="progress-step" data-step="2">
+        <div class="step-number">2</div>
+        <div class="step-label">Profile</div>
+      </div>
+      <div class="progress-step" data-step="3">
+        <div class="step-number">3</div>
+        <div class="step-label">AI Provider</div>
+      </div>
+      <div class="progress-step" data-step="4">
+        <div class="step-number">4</div>
+        <div class="step-label">Complete</div>
+      </div>
+    </div>
+
+    <!-- Setup steps -->
+    <div class="setup-content">
+      
+      <!-- Step 1: Welcome -->
+      <div class="step-panel active" id="step-1">
+        <div class="step-header">
+          <div class="welcome-icon">🚀</div>
+          <h1>Welcome to JobApplicationAgent!</h1>
+          <p>Let's set up your profile in just a few steps to start auto-filling job applications.</p>
+        </div>
+        
+        <div class="features-showcase">
+          <div class="feature-card">
+            <div class="feature-icon">🤖</div>
+            <h3>AI-Powered Detection</h3>
+            <p>Automatically detects job application forms on any website</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>One-Click Filling</h3>
+            <p>Fill entire forms with your information instantly</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Privacy First</h3>
+            <p>All data stored locally on your device</p>
+          </div>
+        </div>
+
+        <div class="step-actions">
+          <button class="btn btn-primary btn-large" onclick="nextStep()">
+            Get Started
+            <span class="btn-icon">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Profile Creation -->
+      <div class="step-panel" id="step-2">
+        <div class="step-header">
+          <h2>Create Your Profile</h2>
+          <p>Enter your information to automatically fill job applications</p>
+        </div>
+
+        <form id="profileForm" class="profile-form">
+          <!-- Personal Information -->
+          <div class="form-section">
+            <h3>Personal Information</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city">
+              </div>
+              <div class="form-group">
+                <label for="state">State/Province</label>
+                <input type="text" id="state" name="state">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="workAuth">Work Authorization</label>
+              <select id="workAuth" name="workAuth">
+                <option value="citizen">U.S. Citizen</option>
+                <option value="permanent_resident">Permanent Resident</option>
+                <option value="work_visa">Work Visa</option>
+                <option value="needs_sponsorship">Need Sponsorship</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Professional Information -->
+          <div class="form-section">
+            <h3>Professional Information</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="currentPosition">Current Position</label>
+                <input type="text" id="currentPosition" name="currentPosition">
+              </div>
+              <div class="form-group">
+                <label for="currentCompany">Current Company</label>
+                <input type="text" id="currentCompany" name="currentCompany">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="experience">Years of Experience</label>
+                <select id="experience" name="experience">
+                  <option value="0">Less than 1 year</option>
+                  <option value="1">1-2 years</option>
+                  <option value="3">3-5 years</option>
+                  <option value="6">6-10 years</option>
+                  <option value="11">10+ years</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="remotePreference">Remote Work Preference</label>
+                <select id="remotePreference" name="remotePreference">
+                  <option value="flexible">Flexible</option>
+                  <option value="remote_only">Remote Only</option>
+                  <option value="hybrid">Hybrid</option>
+                  <option value="on_site">On-site Only</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="form-section">
+            <h3>Skills & Links</h3>
+            <div class="form-group">
+              <label for="skills">Technical Skills (comma-separated)</label>
+              <textarea id="skills" name="skills" rows="3" placeholder="JavaScript, Python, React, AWS, etc."></textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="linkedinUrl">LinkedIn Profile</label>
+                <input type="url" id="linkedinUrl" name="linkedinUrl" placeholder="https://linkedin.com/in/yourname">
+              </div>
+              <div class="form-group">
+                <label for="githubUrl">GitHub Profile</label>
+                <input type="url" id="githubUrl" name="githubUrl" placeholder="https://github.com/yourname">
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div class="step-actions">
+          <button class="btn btn-secondary" onclick="previousStep()">
+            <span class="btn-icon">←</span>
+            Back
+          </button>
+          <button class="btn btn-primary" onclick="validateAndNextStep()">
+            Continue
+            <span class="btn-icon">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3: AI Provider Setup -->
+      <div class="step-panel" id="step-3">
+        <div class="step-header">
+          <h2>Choose AI Provider</h2>
+          <p>Select how you want to power the smart form filling</p>
+        </div>
+
+        <div class="ai-provider-options">
+          <div class="provider-option" data-provider="free">
+            <div class="provider-header">
+              <div class="provider-icon">🆓</div>
+              <div class="provider-info">
+                <h3>Free (Built-in)</h3>
+                <p>Basic form detection and filling</p>
+              </div>
+              <div class="provider-badge">Recommended</div>
+            </div>
+            <div class="provider-features">
+              <div class="feature">✅ Form detection</div>
+              <div class="feature">✅ Basic field matching</div>
+              <div class="feature">❌ AI-powered suggestions</div>
+              <div class="feature">❌ Context understanding</div>
+            </div>
+            <div class="provider-cost">
+              <span class="cost-label">Cost:</span>
+              <span class="cost-value">Free Forever</span>
+            </div>
+          </div>
+
+          <div class="provider-option" data-provider="deepseek">
+            <div class="provider-header">
+              <div class="provider-icon">🤖</div>
+              <div class="provider-info">
+                <h3>DeepSeek</h3>
+                <p>AI-powered intelligent form filling</p>
+              </div>
+              <div class="provider-badge premium">Premium</div>
+            </div>
+            <div class="provider-features">
+              <div class="feature">✅ Advanced form detection</div>
+              <div class="feature">✅ Smart field matching</div>
+              <div class="feature">✅ Context-aware suggestions</div>
+              <div class="feature">✅ Cover letter generation</div>
+            </div>
+            <div class="provider-cost">
+              <span class="cost-label">Cost:</span>
+              <span class="cost-value">~$0.10/month</span>
+            </div>
+          </div>
+
+          <div class="provider-option" data-provider="gemini">
+            <div class="provider-header">
+              <div class="provider-icon">💎</div>
+              <div class="provider-info">
+                <h3>Google Gemini</h3>
+                <p>Google's AI for smart automation</p>
+              </div>
+              <div class="provider-badge premium">Premium</div>
+            </div>
+            <div class="provider-features">
+              <div class="feature">✅ Google AI integration</div>
+              <div class="feature">✅ Multi-language support</div>
+              <div class="feature">✅ Advanced reasoning</div>
+              <div class="feature">✅ Document understanding</div>
+            </div>
+            <div class="provider-cost">
+              <span class="cost-label">Cost:</span>
+              <span class="cost-value">~$0.15/month</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- API Key input for premium providers -->
+        <div class="api-key-section" id="apiKeySection" style="display: none;">
+          <div class="api-key-header">
+            <h4>Enter API Key</h4>
+            <p>Get your API key from the provider's dashboard</p>
+          </div>
+          <div class="form-group">
+            <label for="apiKey">API Key</label>
+            <input type="password" id="apiKey" name="apiKey" placeholder="Enter your API key">
+            <div class="input-help">
+              <a href="#" id="apiKeyHelpLink" target="_blank">How to get an API key →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-actions">
+          <button class="btn btn-secondary" onclick="previousStep()">
+            <span class="btn-icon">←</span>
+            Back
+          </button>
+          <button class="btn btn-primary" onclick="finalizeSetup()">
+            Complete Setup
+            <span class="btn-icon">✅</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 4: Complete -->
+      <div class="step-panel" id="step-4">
+        <div class="step-header">
+          <div class="success-icon">🎉</div>
+          <h1>Setup Complete!</h1>
+          <p>Your JobApplicationAgent is ready to help you apply for jobs faster.</p>
+        </div>
+
+        <div class="setup-summary">
+          <div class="summary-card">
+            <h3>Profile Created</h3>
+            <p id="profileSummary">Profile ready for auto-filling</p>
+          </div>
+          <div class="summary-card">
+            <h3>AI Provider</h3>
+            <p id="aiProviderSummary">Ready for smart form detection</p>
+          </div>
+        </div>
+
+        <div class="next-steps">
+          <h3>What's Next?</h3>
+          <div class="next-step-item">
+            <div class="step-icon">1️⃣</div>
+            <div class="step-content">
+              <h4>Visit a Job Site</h4>
+              <p>Go to LinkedIn Jobs, Indeed, or any company careers page</p>
+            </div>
+          </div>
+          <div class="next-step-item">
+            <div class="step-icon">2️⃣</div>
+            <div class="step-content">
+              <h4>Look for the Extension</h4>
+              <p>Click the JobApplicationAgent icon when you see an application form</p>
+            </div>
+          </div>
+          <div class="next-step-item">
+            <div class="step-icon">3️⃣</div>
+            <div class="step-content">
+              <h4>Auto-fill Forms</h4>
+              <p>Click "Analyze & Fill" to automatically complete the application</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-actions">
+          <button class="btn btn-secondary" onclick="openTestSite()">
+            Try Demo
+            <span class="btn-icon">🔗</span>
+          </button>
+          <button class="btn btn-primary" onclick="completeSetup()">
+            Start Using
+            <span class="btn-icon">🚀</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../lib/profile_manager.js"></script>
+  <script src="setup.js"></script>
+</body>
+</html>

@@ -3,9 +3,9 @@ from fuzzywuzzy import fuzz
 import re
 
 from .ai_service import AIService
-from ..models.form import FormField, FieldMapping, MappingSource, FieldMappingConfidence
-from ..models.profile import UserProfile
-from ..models.ai_config import AIResponse
+from models.form import FormField, FieldMapping, MappingSource, FieldMappingConfidence
+from models.profile import UserProfile
+from models.ai_config import AIResponse
 
 
 class SemanticMatcher:

@@ -17,9 +17,13 @@ from rich.panel import Panel
 from rich.progress import Progress, SpinnerColumn, TextColumn
 from rich.prompt import Prompt, Confirm
 from rich import print as rprint
+from dotenv import load_dotenv
 
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent))
+
+# Load environment variables from .env file
+load_dotenv(Path(__file__).parent.parent / '.env')
 
 from services.deepseek_service import DeepSeekService
 from services.form_analyzer import FormAnalyzer
@@ -93,16 +97,16 @@ class JobApplicationCLI:
 
 @click.group()
 @click.pass_context
-async def cli(ctx):
+def cli(ctx):
     """Job Application Agent CLI - AI-powered job application automation"""
     if ctx.obj is None:
         ctx.obj = JobApplicationCLI()
-        await ctx.obj.initialize()
+        asyncio.run(ctx.obj.initialize())
 
 
 @cli.command()
 @click.pass_context
-async def setup(ctx):
+def setup(ctx):
     """Initial setup and configuration"""
     cli_obj = ctx.obj
     
@@ -150,7 +154,7 @@ async def setup(ctx):
 @click.option('--html-file', type=click.Path(exists=True), help='Path to HTML file to analyze')
 @click.option('--url', help='URL of job application form')
 @click.pass_context
-async def analyze_form(ctx, html_file: Optional[str], url: Optional[str]):
+def analyze_form(ctx, html_file: Optional[str], url: Optional[str]):
     """Analyze a job application form"""
     cli_obj = ctx.obj
     
@@ -172,14 +176,8 @@ async def analyze_form(ctx, html_file: Optional[str], url: Optional[str]):
         console.print("❌ URL fetching not yet implemented", style="red")
         return
     
-    # Analyze the form
-    with Progress(
-        SpinnerColumn(),
-        TextColumn("[progress.description]{task.description}"),
-        console=console,
-    ) as progress:
-        task = progress.add_task("Analyzing form with AI...", total=None)
-        
+    async def run_analysis():
+        """Async wrapper for form analysis"""
         try:
             result = await cli_obj.form_analyzer.analyze_form(html_content)
             
@@ -233,10 +231,19 @@ async def analyze_form(ctx, html_file: Optional[str], url: Optional[str]):
         except Exception as e:
             console.print(f"❌ Error during form analysis: {str(e)}", style="red")
 
+    # Analyze the form
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        console=console,
+    ) as progress:
+        task = progress.add_task("Analyzing form with AI...", total=None)
+        asyncio.run(run_analysis())
+
 
 @cli.command()
 @click.pass_context
-async def create_profile(ctx):
+def create_profile(ctx):
     """Create a new user profile interactively"""
     cli_obj = ctx.obj
     
@@ -285,7 +292,10 @@ async def create_profile(ctx):
         )
         
         # Save profile
-        saved = await cli_obj.storage_manager.save_profile(profile.profile_id, profile.dict())
+        async def save_profile():
+            return await cli_obj.storage_manager.save_profile(profile.profile_id, profile.model_dump())
+        
+        saved = asyncio.run(save_profile())
         
         if saved:
             console.print(f"✅ Profile created with ID: {profile.profile_id}", style="green")
@@ -311,12 +321,15 @@ async def create_profile(ctx):
 
 @cli.command()
 @click.pass_context
-async def list_profiles(ctx):
+def list_profiles(ctx):
     """List all user profiles"""
     cli_obj = ctx.obj
     
     try:
-        profiles = await cli_obj.storage_manager.list_profiles()
+        async def get_profiles():
+            return await cli_obj.storage_manager.list_profiles()
+        
+        profiles = asyncio.run(get_profiles())
         
         if not profiles:
             console.print("No profiles found. Use 'create-profile' to create one.", style="yellow")
@@ -344,7 +357,7 @@ async def list_profiles(ctx):
 
 @cli.command()
 @click.pass_context
-async def test_ai(ctx):
+def test_ai(ctx):
     """Test AI service connection and capabilities"""
     cli_obj = ctx.obj
     
@@ -362,38 +375,41 @@ async def test_ai(ctx):
     ) as progress:
         task = progress.add_task("Testing connection...", total=None)
         
-        try:
-            connected = await cli_obj.ai_service.test_connection()
-            
-            if connected:
-                console.print("✅ Connection successful", style="green")
+        async def run_test():
+            try:
+                connected = await cli_obj.ai_service.test_connection()
                 
-                # Get model info
-                model_info = await cli_obj.ai_service.get_model_info()
-                
-                table = Table(title="AI Service Info")
-                table.add_column("Property", style="cyan")
-                table.add_column("Value", style="white")
-                
-                for key, value in model_info.items():
-                    table.add_row(str(key), str(value))
-                
-                console.print(table)
-                
-                # Get usage stats
-                stats = cli_obj.ai_service.get_usage_stats("all")
-                console.print(f"\n📊 Usage Stats: {stats['total_requests']} requests, ${stats['total_cost']:.4f} total cost")
-                
-            else:
-                console.print("❌ Connection failed", style="red")
-                
-        except Exception as e:
-            console.print(f"❌ Error testing AI service: {str(e)}", style="red")
+                if connected:
+                    console.print("✅ Connection successful", style="green")
+                    
+                    # Get model info
+                    model_info = await cli_obj.ai_service.get_model_info()
+                    
+                    table = Table(title="AI Service Info")
+                    table.add_column("Property", style="cyan")
+                    table.add_column("Value", style="white")
+                    
+                    for key, value in model_info.items():
+                        table.add_row(str(key), str(value))
+                    
+                    console.print(table)
+                    
+                    # Get usage stats
+                    stats = cli_obj.ai_service.get_usage_stats("all")
+                    console.print(f"\n📊 Usage Stats: {stats['total_requests']} requests, ${stats['total_cost']:.4f} total cost")
+                    
+                else:
+                    console.print("❌ Connection failed", style="red")
+                    
+            except Exception as e:
+                console.print(f"❌ Error testing AI service: {str(e)}", style="red")
+        
+        asyncio.run(run_test())
 
 
 @cli.command()
 @click.pass_context
-async def usage_stats(ctx):
+def usage_stats(ctx):
     """Show AI usage statistics"""
     cli_obj = ctx.obj
     
@@ -433,41 +449,9 @@ async def usage_stats(ctx):
         console.print(op_table)
 
 
-def run_async_cli():
-    """Run async CLI commands"""
-    def async_command(f):
-        def wrapper(*args, **kwargs):
-            return asyncio.run(f(*args, **kwargs))
-        return wrapper
-    
-    # Apply async wrapper to commands
-    for name, command in cli.commands.items():
-        cli.commands[name] = async_command(command)
-    
+def main():
+    """Main entry point for the CLI"""
     cli()
 
-
 if __name__ == '__main__':
-    # Set up asyncio event loop for CLI
-    import asyncio
-    
-    async def run_cli():
-        # Create CLI instance
-        cli_obj = JobApplicationCLI()
-        await cli_obj.initialize()
-        
-        # Check arguments to determine which command to run
-        if len(sys.argv) < 2:
-            console.print("Job Application Agent CLI", style="bold blue")
-            console.print("Use --help to see available commands")
-            return
-        
-        # For now, run setup by default
-        if sys.argv[1] == "setup":
-            await setup.callback(click.Context(setup), obj=cli_obj)
-        elif sys.argv[1] == "test-ai":
-            await test_ai.callback(click.Context(test_ai), obj=cli_obj)
-        else:
-            console.print("Available commands: setup, test-ai", style="yellow")
-    
-    asyncio.run(run_cli())
+    main()

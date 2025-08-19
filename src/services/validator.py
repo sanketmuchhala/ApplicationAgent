@@ -4,9 +4,9 @@ from pathlib import Path
 from typing import Dict, List, Optional, Any, Tuple
 from datetime import datetime, date
 
-from ..models.profile import UserProfile
-from ..models.form import FormField, FieldType
-from ..models.application import Application
+from models.profile import UserProfile
+from models.form import FormField, FieldType
+from models.application import Application
 
 
 class ValidationError(Exception):

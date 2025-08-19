@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 
 from .ai_service import AIService
-from ..models.form import Form, FormField, FormSection, FormMetadata, FieldType
-from ..models.ai_config import AIResponse
+from models.form import Form, FormField, FormSection, FormMetadata, FieldType
+from models.ai_config import AIResponse
 
 
 class FormAnalyzer:

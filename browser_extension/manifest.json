@@ -1,0 +1,66 @@
+{
+  "manifest_version": 3,
+  "name": "JobApplicationAgent - Smart Auto-Fill",
+  "version": "1.0.0",
+  "description": "AI-powered job application assistant that automatically fills forms with your profile data. Works on LinkedIn, Indeed, and company career pages.",
+  
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "JobApplicationAgent",
+    "default_icon": {
+      "16": "assets/icons/icon-16.png",
+      "48": "assets/icons/icon-48.png",
+      "128": "assets/icons/icon-128.png"
+    }
+  },
+  
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  
+  "background": {
+    "service_worker": "background/background.js"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": [
+        "lib/semantic_matcher.js",
+        "lib/profile_manager.js",
+        "content_scripts/form_detector.js",
+        "content_scripts/form_filler.js",
+        "content_scripts/ui_overlay.js"
+      ],
+      "css": ["content_scripts/overlay.css"],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/icons/*",
+        "assets/images/*",
+        "popup/setup.html"
+      ],
+      "matches": ["https://*/*", "http://*/*"]
+    }
+  ],
+  
+  "author": "Sanket Muchhala",
+  "homepage_url": "https://github.com/sanket/JobApplicationAgent"
+}

@@ -3,9 +3,9 @@ from typing import Dict, List, Optional, Any
 from fuzzywuzzy import fuzz
 
 from .ai_service import AIService
-from ..models.ai_config import AIResponse
-from ..models.form import FormField
-from ..models.profile import UserProfile
+from models.ai_config import AIResponse
+from models.form import FormField
+from models.profile import UserProfile
 
 
 class BasicMatchingService(AIService):

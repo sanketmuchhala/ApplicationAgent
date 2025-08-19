@@ -7,10 +7,10 @@ import tiktoken
 from openai import AsyncOpenAI
 
 from .ai_service import AIService
-from ..models.ai_config import AIResponse
-from ..models.form import FormField
-from ..models.profile import UserProfile
-from ..utils.prompts import PromptManager
+from models.ai_config import AIResponse
+from models.form import FormField
+from models.profile import UserProfile
+from utils.prompts import PromptManager
 
 
 class DeepSeekService(AIService):

@@ -2,8 +2,8 @@ import uuid
 from datetime import datetime
 from typing import Dict, List, Optional, Any
 
-from ..models.profile import UserProfile
-from ..utils.storage import StorageManager
+from models.profile import UserProfile
+from utils.storage import StorageManager
 
 
 class ProfileManager:
