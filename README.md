@@ -2,6 +2,10 @@
 
 An intelligent job application automation tool that uses DeepSeek's powerful AI API for semantic field matching, contextual response generation, and form analysis - all at ultra-low cost.
 
+<img width="1680" height="1050" alt="Screenshot 2025-09-14 at 12 33 45 AM" src="https://github.com/user-attachments/assets/a49a57bd-feab-456c-96dc-a8327eab27c0" />
+<img width="1680" height="1050" alt="Screenshot 2025-09-14 at 12 33 19 AM" src="https://github.com/user-attachments/assets/cbbc26c7-5b38-411f-9a2c-85828836a471" />
+
+
 ## ✨ Features
 
 ### 🤖 AI-Powered Intelligence
